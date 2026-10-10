@@ -225,10 +225,11 @@ lots:
   - id: L28
     title: Particules du codex sans pause et pause de l'accueil ignorée (mouvement mesuré à 3 s) — bouton pause dans CodexLayout, CodexAmbient sur l'horloge partagée (WCAG 2.2.2, revue UX L3, bloquant)
     public: "Codex : les particules se mettent en pause"
-    status: todo
+    status: doing
     estimate: 0.25
     visible: true
     created: 2026-10-10
+    started: 2026-10-10
   - id: L29
     title: "Fiches du codex : classe prose sans effet (typography absent, Tailwind 4) — paragraphes collés, h2 à la taille du corps, lignes de ~128 car. ; styles de lecture aux couleurs Eywa (revue UX L3)"
     public: "Fiches : paragraphes et titres enfin mis en forme"
