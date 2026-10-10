@@ -45,6 +45,7 @@ lots:
     created: 2026-09-28
     notes:
       - { date: 2026-10-10, text: "Revue UX 10-10 (ux-reviewer Opus, prod, 1440/390/320) : non conforme — 3 bloquants, 3 majeurs → 5 lots ; maquette C (cartes et fiches sans image : liseré 4 px au lieu de la zone 4:3, h1 en haut de fiche) à valider par Sylvain ; mineurs : « ← retour » 58×21 px au libellé flou (« ← Tous les personnages », 44 px), saut h1 → h3 sur la liste. Captures ~/projects/developpeur/tmp/ux-avatar-personnages/" }
+      - { date: 2026-10-10, text: "Maquette C (cartes sans image en liseré) SUSPENDUE par le lead le 10-10 : Sylvain trouve le site triste sans images et veut un univers vivant — la réponse est L17 + le prototype « Pandora vivant », pas moins d'image" }
     started: 2026-10-10
     finished: 2026-10-10
   - id: L4
@@ -139,6 +140,7 @@ lots:
     created: 2026-10-01
     notes:
       - { date: 2026-10-01, text: "Sylvain 01-10 : décidé avec L16 (option b, images à nous)" }
+      - { date: 2026-10-10, text: "Sylvain 10-10 : images générées en LOCAL validées (« t'es génial ») — SDXL base 1.0 sur la RTX 5090, ~/ai/imggen, 4 s/image, licence OpenRAIL++ ; créatures volantes à reprendre (dragon européen au lieu d'ikran) ; priorité d'avatar avant les corrections d'ergonomie restantes. Essais : ~/projects/developpeur/tmp/pandora-essais/" }
   - id: L18
     title: "Supprimer le backend NestJS d'Eywa (ne sert plus que /api/health depuis le retrait du proxy Fandom) : dossier backend, conteneur et proxy nginx /api du NAS, docker-compose, docs"
     status: done
@@ -244,4 +246,9 @@ lots:
     status: todo
     estimate: 0.25
     visible: true
+    created: 2026-10-10
+  - id: L31
+    title: "Direction « Pandora vivant » : prototype interactif publié en lien privé (lumière bioluminescente qui s'allume au toucher puis s'éteint, cartes qui s'éveillent au survol, silhouettes d'ikrans dans les bandeaux, cycle jour/nuit, eau qui ondule) avec les images générées en local, respect de prefers-reduced-motion et pause ; Sylvain choisit ce qui devient des lots"
+    status: todo
+    estimate: 0.5
     created: 2026-10-10
