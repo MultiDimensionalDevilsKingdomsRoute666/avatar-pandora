@@ -7,4 +7,4 @@ captures: [{ file: captures/L26-bandeau-personnages-320.png, alt: "Le bandeau de
 ---
 Sur un petit écran, le bandeau en tête de chaque section du codex coupait son texte : à 320 px de large, « V — Personnages » et le début du titre sortaient de l'image.
 
-Le bandeau s'allonge maintenant autant qu'il le faut : le sur-titre, le titre et la phrase d'accroche s'affichent en entier, de la page Personnages à Bestiaire, Clans, Pandora, Flore, Films et Engins. Rien ne change sur ordinateur ni sur tablette.
+Le bandeau s'allonge maintenant autant qu'il le faut, à toutes les largeurs : le sur-titre, le titre et la phrase d'accroche s'affichent en entier, de la page Personnages à Bestiaire, Clans, Pandora, Flore, Films, Engins et Vidéos. Sur ordinateur et sur tablette, là où le texte tenait déjà, le bandeau garde sa hauteur ; là où il était coupé (une fenêtre étroite à côté de la barre latérale, par exemple), il grandit pour tout montrer.
