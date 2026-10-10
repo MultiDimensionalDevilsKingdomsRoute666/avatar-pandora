@@ -141,6 +141,15 @@
   }
 }
 
+/* Ambiance en pause (bouton AtmospherePause, WCAG 2.2.2) : les animations CSS d'ambiance
+   gardent leur image courante — dérive des halos, pulsation des mots, respiration. */
+:root.eywa-atmo-paused .bio-ambient,
+:root.eywa-atmo-paused .bio-word.is-pulsing,
+:root.eywa-atmo-paused .section-hero *,
+:root.eywa-atmo-paused .eywa-nav-link.is-active {
+  animation-play-state: paused !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bio-word {
     transition: none;

@@ -4,6 +4,7 @@ import type { MutableRefObject } from 'react';
 import { Points, ShaderMaterial, Vector2 } from 'three';
 import { ParticleField } from './ParticleField';
 import { useReducedMotion } from './useReducedMotion';
+import { useAtmospherePaused } from './atmosphere-clock';
 
 // Same shape as CinemaCanvas — but here uMouse is the only thing the
 // driver mutates (colors / density stay at the ParticleField initials).
@@ -20,8 +21,10 @@ interface MouseAttractor {
  */
 function CodexMouseDriver({
   mouseRef,
+  paused,
 }: {
   mouseRef: MutableRefObject<MouseAttractor>;
+  paused: boolean;
 }) {
   const { scene } = useThree();
   const matRef = useRef<ShaderMaterial | null>(null);
@@ -38,7 +41,8 @@ function CodexMouseDriver({
   }, [scene]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    // Ambiance en pause (WCAG 2.2.2) : le pointeur n'attire plus les particules.
+    if (typeof window === 'undefined' || paused) return;
     let raf = 0;
     const tick = () => {
       const m = mouseRef.current;
@@ -55,7 +59,7 @@ function CodexMouseDriver({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [mouseRef]);
+  }, [mouseRef, paused]);
 
   return null;
 }
@@ -87,6 +91,8 @@ export function CodexAmbient({
   size = 5.4,
 }: Props = {}) {
   const reduced = useReducedMotion();
+  // Même horloge et même bouton que l'accueil (AtmospherePause) : en pause, plus aucun rendu.
+  const paused = useAtmospherePaused();
   const mouseRef = useRef<MouseAttractor>({
     target: { x: 0, y: 0, strength: 0 },
     current: { x: 0, y: 0, strength: 0 },
@@ -123,6 +129,7 @@ export function CodexAmbient({
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
+        frameloop={paused ? 'demand' : 'always'}
         camera={{ position: [0, 0, 14], fov: 60 }}
         dpr={[1, 1.5]}
         gl={{
@@ -139,7 +146,7 @@ export function CodexAmbient({
           initialDensity={density}
           size={size}
         />
-        <CodexMouseDriver mouseRef={mouseRef} />
+        <CodexMouseDriver mouseRef={mouseRef} paused={paused} />
       </Canvas>
     </div>
   );
