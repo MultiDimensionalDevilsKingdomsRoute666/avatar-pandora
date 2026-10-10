@@ -230,6 +230,7 @@ lots:
     visible: true
     created: 2026-10-10
     started: 2026-10-10
+    review: { date: 2026-10-10, verdict: "compliant (0 bloquant, 0 majeur, 1 mineur : coin d'une carte recouvert par le bouton en fin de défilement à 390 px) — orchestré (vague 2026-10-10-2010, 0 passe(s) de correction)", commit: 2dd55ed7011cf1e822b12df1e65d3b3b3dc3f4ff }
   - id: L29
     title: "Fiches du codex : classe prose sans effet (typography absent, Tailwind 4) — paragraphes collés, h2 à la taille du corps, lignes de ~128 car. ; styles de lecture aux couleurs Eywa (revue UX L3)"
     public: "Fiches : paragraphes et titres enfin mis en forme"
