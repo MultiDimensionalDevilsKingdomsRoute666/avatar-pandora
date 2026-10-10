@@ -40,9 +40,13 @@ lots:
     finished: 2026-10-01
   - id: L3
     title: Revue UX — Personnages (liste + fiche)
-    status: todo
+    status: done
     estimate: 0.25
     created: 2026-09-28
+    notes:
+      - { date: 2026-10-10, text: "Revue UX 10-10 (ux-reviewer Opus, prod, 1440/390/320) : non conforme — 3 bloquants, 3 majeurs → 5 lots ; maquette C (cartes et fiches sans image : liseré 4 px au lieu de la zone 4:3, h1 en haut de fiche) à valider par Sylvain ; mineurs : « ← retour » 58×21 px au libellé flou (« ← Tous les personnages », 44 px), saut h1 → h3 sur la liste. Captures ~/projects/developpeur/tmp/ux-avatar-personnages/" }
+    started: 2026-10-10
+    finished: 2026-10-10
   - id: L4
     title: Revue UX — Pandora (liste + fiche)
     status: todo
@@ -200,3 +204,38 @@ lots:
     started: 2026-10-07
     review: { date: 2026-10-07, verdict: "conforme (lead) : cadence.yaml seul ; commande essayée avec startApp de cadence (Node 20 au départ, Node du .nvmrc injecté) → ready, HTTP 200, port libéré après stop", commit: 1fbfc3da7599ab161354b023019e5a4aa58c597a }
     finished: 2026-10-07
+  - id: L26
+    title: "Bandeau de section rogné au téléphone : 88 px coupés à 320 (« V — Personnages » + « Figures de »), 7 px à 360 — hauteur au contenu sous 768 px dans SectionHero (WCAG 1.4.10, revue UX L3, bloquant)"
+    public: "Personnages : le bandeau n'est plus rogné au téléphone"
+    status: todo
+    estimate: 0.25
+    visible: true
+    created: 2026-10-10
+  - id: L27
+    title: "Texte du codex sur les particules : pire pixel 1,17:1 (fiche) et 1,92:1 (résumés de cartes) — voile sombre sous l'article et le corps des cartes comme L2 (WCAG 1.4.3, revue UX L3, bloquant)"
+    public: "Codex : le texte reste lisible au-dessus des particules"
+    status: todo
+    estimate: 0.25
+    visible: true
+    created: 2026-10-10
+  - id: L28
+    title: Particules du codex sans pause et pause de l'accueil ignorée (mouvement mesuré à 3 s) — bouton pause dans CodexLayout, CodexAmbient sur l'horloge partagée (WCAG 2.2.2, revue UX L3, bloquant)
+    public: "Codex : les particules se mettent en pause"
+    status: todo
+    estimate: 0.25
+    visible: true
+    created: 2026-10-10
+  - id: L29
+    title: "Fiches du codex : classe prose sans effet (typography absent, Tailwind 4) — paragraphes collés, h2 à la taille du corps, lignes de ~128 car. ; styles de lecture aux couleurs Eywa (revue UX L3)"
+    public: "Fiches : paragraphes et titres enfin mis en forme"
+    status: todo
+    estimate: 0.25
+    visible: true
+    created: 2026-10-10
+  - id: L30
+    title: "Cartes du codex au toucher : 1,6 s d'attente avant la navigation (bloom) puis rechargement complet — naviguer tout de suite par le ClientRouter, effet ≤ 200 ms (Nielsen 1, revue UX L3)"
+    public: "Codex : une carte touchée ouvre sa fiche sans attendre"
+    status: todo
+    estimate: 0.25
+    visible: true
+    created: 2026-10-10
