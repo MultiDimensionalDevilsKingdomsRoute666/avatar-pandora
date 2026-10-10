@@ -255,8 +255,52 @@ lots:
     created: 2026-10-10
   - id: L31
     title: "Direction « Pandora vivant » : prototype interactif publié en lien privé (lumière bioluminescente qui s'allume au toucher puis s'éteint, cartes qui s'éveillent au survol, silhouettes d'ikrans dans les bandeaux, cycle jour/nuit, eau qui ondule) avec les images générées en local, respect de prefers-reduced-motion et pause ; Sylvain choisit ce qui devient des lots"
+    status: done
+    estimate: 0.5
+    created: 2026-10-10
+    notes:
+      - { date: 2026-10-10, text: "Prototype publié le 10-10 (https://claude.ai/artifact/Sudm5URsbr3ALcJnx6zwtv, source ~/projects/developpeur/tmp/pandora-vivant/) — Sylvain retient les 5 idées (« C'est magnifique ») → L32 à L36, après L17 (images générées)" }
+    started: 2026-10-10
+    finished: 2026-10-10
+  - id: L32
+    title: "Pandora vivant 1 — lumière au toucher : le fond de l'accueil et du codex s'allume sous le doigt ou la souris (taches de mousse bioluminescente qui s'étendent puis s'éteignent en ~3 s, pas invisibles au repos), d'après le prototype validé par Sylvain le 10-10 (https://claude.ai/artifact/Sudm5URsbr3ALcJnx6zwtv) ; pause globale et prefers-reduced-motion respectés"
+    public: Pandora s'allume sous tes pas
     status: todo
     estimate: 0.5
+    visible: true
+    after: [ L17 ]
+    created: 2026-10-10
+  - id: L33
+    title: "Pandora vivant 2 — cartes qui s'éveillent : chaque carte du codex dort dans la pénombre et s'éveille au survol, au toucher ou au clavier (liseré qui pulse, image qui s'éclaire, spores qui montent), d'après le prototype validé le 10-10 ; prefers-reduced-motion respecté"
+    public: Les fiches du codex s'éveillent
+    status: todo
+    estimate: 0.5
+    visible: true
+    after: [ L17 ]
+    created: 2026-10-10
+  - id: L34
+    title: "Pandora vivant 3 — ikrans dans le ciel : silhouettes d'ikrans (4 ailes, longue queue, dessin SVG, jamais un dragon européen) qui traversent les bandeaux Pandora et Bestiaire de temps en temps, un toucher en appelle un ; d'après le prototype validé le 10-10 ; à améliorer : battement d'ailes moins raide"
+    public: Des ikrans traversent le ciel
+    status: todo
+    estimate: 0.5
+    visible: true
+    after: [ L17 ]
+    created: 2026-10-10
+  - id: L35
+    title: "Pandora vivant 4 — jour et nuit : l'ambiance suit l'heure du visiteur, la forêt s'illumine à mesure que la nuit tombe (filtres + points bioluminescents), réglage manuel possible ; d'après le prototype validé le 10-10"
+    public: Le jour et la nuit sur Pandora
+    status: todo
+    estimate: 0.5
+    visible: true
+    after: [ L17 ]
+    created: 2026-10-10
+  - id: L36
+    title: "Pandora vivant 5 — eau vivante : les pages des Metkayina et de l'océan ondoient sous le doigt (anneau qui déforme l'image, plancton lumineux qui s'écarte), d'après le prototype validé le 10-10 ; ondulation à rendre plus visible (WebGL si besoin)"
+    public: L'eau ondule sous le doigt
+    status: todo
+    estimate: 0.5
+    visible: true
+    after: [ L17 ]
     created: 2026-10-10
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
