@@ -1,5 +1,5 @@
 // L26 — WCAG 1.4.10 : le bandeau de section (SectionHero) ne rogne plus son texte au
-// téléphone. Sous 768 px la hauteur suit le contenu ; le texte reste dans le bandeau.
+// téléphone. À toute largeur la hauteur suit le contenu ; le texte reste dans le bandeau.
 // Lit frontend/dist ; skip sans playwright-core/Chromium.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -7,11 +7,11 @@ import { setupBrowser } from './lib/e2e-dist.mjs';
 
 const PAGES = ['/personnages/', '/bestiaire/', '/clans/', '/pandora/', '/flore/', '/films/', '/engins/'];
 
-test('bandeau de section : aucun texte rogné de 320 à 767 px, ratio 16:10 conservé quand le texte tient', { timeout: 240_000 }, async (t) => {
+test('bandeau de section : aucun texte rogné de 320 à 1440 px, ratio 16:10 (21:9 dès 768 px) quand le texte tient', { timeout: 240_000 }, async (t) => {
   const env = await setupBrowser(t);
   if (!env) return;
   const failures = [];
-  for (const width of [320, 360, 390, 767]) {
+  for (const width of [320, 360, 390, 767, 768, 800, 900, 1000, 1280, 1440]) {
     const context = await env.browser.newContext({ viewport: { width, height: 700 } });
     const page = await context.newPage();
     for (const path of PAGES) {
@@ -28,8 +28,9 @@ test('bandeau de section : aucun texte rogné de 320 à 767 px, ratio 16:10 cons
         return { cut, ratio: h.width / h.height };
       });
       if (m.cut.length) failures.push(`${path} @${width}px : ${m.cut.join(', ')}`);
-      // Jamais plus plat que 16:10.
-      if (m.ratio > 1.6 + 0.02) failures.push(`${path} @${width}px : ratio ${m.ratio.toFixed(2)} > 16:10`);
+      // Jamais plus plat que 16:10 (21:9 dès 768 px).
+      const max = (width >= 768 ? 21 / 9 : 1.6) + 0.02;
+      if (m.ratio > max) failures.push(`${path} @${width}px : ratio ${m.ratio.toFixed(2)} > ${max.toFixed(2)}`);
     }
     await context.close();
   }

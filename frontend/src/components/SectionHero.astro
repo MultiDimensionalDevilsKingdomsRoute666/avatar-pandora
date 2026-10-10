@@ -36,8 +36,8 @@ const imgSrc = coverImageSrc(cover);
 <style>
   .section-hero {
     position: relative;
-    /* Mobile : 16:10 (lisible sur tel), desktop : 21:9 (cinéma). */
-    /* Sous 768 px le texte est dans le flux : le bandeau grandit avec lui au lieu de
+    /* Minimum : 16:10 sur téléphone (lisible), 21:9 dès 768 px (cinéma). */
+    /* Le texte est dans le flux : le bandeau grandit avec lui au lieu de
        le rogner (WCAG 1.4.10). Le 16:10 n'est qu'un minimum, tenu par ::before
        (aspect-ratio ne le ferait pas : overflow: hidden annule la taille minimale
        automatique). */
@@ -59,11 +59,8 @@ const imgSrc = coverImageSrc(cover);
     padding-top: 62.5%;
   }
   @media (min-width: 768px) {
-    .section-hero {
-      aspect-ratio: 21 / 9;
-    }
     .section-hero::before {
-      display: none;
+      padding-top: 42.857%;
     }
   }
 
@@ -151,10 +148,6 @@ const imgSrc = coverImageSrc(cover);
   }
   @media (min-width: 768px) {
     .section-hero__content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
       padding: 2.5rem 2.5rem 2rem;
     }
   }
