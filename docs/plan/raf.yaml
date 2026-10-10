@@ -209,30 +209,36 @@ lots:
   - id: L26
     title: "Bandeau de section rogné au téléphone : 88 px coupés à 320 (« V — Personnages » + « Figures de »), 7 px à 360 — hauteur au contenu sous 768 px dans SectionHero (WCAG 1.4.10, revue UX L3, bloquant)"
     public: "Personnages : le bandeau n'est plus rogné au téléphone"
-    status: doing
+    status: done
     estimate: 0.25
     visible: true
     created: 2026-10-10
     started: 2026-10-10
     review: { date: 2026-10-10, verdict: "conforme : 2 notes mineures (/videos/ et 1024 px absents du test), le bandeau n'est plus rogné sur les 8 pages de 320 à 1440 px — orchestré (vague 2026-10-10-2010, 2 passe(s) de correction)", commit: d289b3d84cc7ab52a94631f079fe7967f39fe55e }
+    ux: { date: 2026-10-10, verdict: ok Sylvain 10-10 (Discord « ok L26 L27 L28 ») ; revue UX auto conforme }
+    finished: 2026-10-10
   - id: L27
     title: "Texte du codex sur les particules : pire pixel 1,17:1 (fiche) et 1,92:1 (résumés de cartes) — voile sombre sous l'article et le corps des cartes comme L2 (WCAG 1.4.3, revue UX L3, bloquant)"
     public: "Codex : le texte reste lisible au-dessus des particules"
-    status: doing
+    status: done
     estimate: 0.25
     visible: true
     created: 2026-10-10
     started: 2026-10-10
     review: { date: 2026-10-10, verdict: "conforme : le texte des 7 types de fiches, de Langue et des cartes mesure au moins 8,16:1 au pire pixel à 1440 et 390 px (104/104 tests) ; aucun écart — orchestré (vague 2026-10-10-2010, 2 passe(s) de correction)", commit: 39594226991c2f26bd5d82d3e0d4520ae59106fc }
+    ux: { date: 2026-10-10, verdict: ok Sylvain 10-10 (Discord « ok L26 L27 L28 ») ; revue UX auto conforme }
+    finished: 2026-10-10
   - id: L28
     title: Particules du codex sans pause et pause de l'accueil ignorée (mouvement mesuré à 3 s) — bouton pause dans CodexLayout, CodexAmbient sur l'horloge partagée (WCAG 2.2.2, revue UX L3, bloquant)
     public: "Codex : les particules se mettent en pause"
-    status: doing
+    status: done
     estimate: 0.25
     visible: true
     created: 2026-10-10
     started: 2026-10-10
     review: { date: 2026-10-10, verdict: "compliant (0 bloquant, 0 majeur, 1 mineur : coin d'une carte recouvert par le bouton en fin de défilement à 390 px) — orchestré (vague 2026-10-10-2010, 0 passe(s) de correction)", commit: 2dd55ed7011cf1e822b12df1e65d3b3b3dc3f4ff }
+    ux: { date: 2026-10-10, verdict: ok Sylvain 10-10 (Discord « ok L26 L27 L28 ») ; revue UX auto conforme }
+    finished: 2026-10-10
   - id: L29
     title: "Fiches du codex : classe prose sans effet (typography absent, Tailwind 4) — paragraphes collés, h2 à la taille du corps, lignes de ~128 car. ; styles de lecture aux couleurs Eywa (revue UX L3)"
     public: "Fiches : paragraphes et titres enfin mis en forme"
