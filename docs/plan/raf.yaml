@@ -212,6 +212,7 @@ lots:
     visible: true
     created: 2026-10-10
     started: 2026-10-10
+    review: { date: 2026-10-10, verdict: "conforme : 2 notes mineures (/videos/ et 1024 px absents du test), le bandeau n'est plus rogné sur les 8 pages de 320 à 1440 px — orchestré (vague 2026-10-10-2010, 2 passe(s) de correction)", commit: d289b3d84cc7ab52a94631f079fe7967f39fe55e }
   - id: L27
     title: "Texte du codex sur les particules : pire pixel 1,17:1 (fiche) et 1,92:1 (résumés de cartes) — voile sombre sous l'article et le corps des cartes comme L2 (WCAG 1.4.3, revue UX L3, bloquant)"
     public: "Codex : le texte reste lisible au-dessus des particules"
