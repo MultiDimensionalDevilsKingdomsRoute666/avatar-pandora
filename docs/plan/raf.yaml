@@ -216,10 +216,11 @@ lots:
   - id: L27
     title: "Texte du codex sur les particules : pire pixel 1,17:1 (fiche) et 1,92:1 (résumés de cartes) — voile sombre sous l'article et le corps des cartes comme L2 (WCAG 1.4.3, revue UX L3, bloquant)"
     public: "Codex : le texte reste lisible au-dessus des particules"
-    status: todo
+    status: doing
     estimate: 0.25
     visible: true
     created: 2026-10-10
+    started: 2026-10-10
   - id: L28
     title: Particules du codex sans pause et pause de l'accueil ignorée (mouvement mesuré à 3 s) — bouton pause dans CodexLayout, CodexAmbient sur l'horloge partagée (WCAG 2.2.2, revue UX L3, bloquant)
     public: "Codex : les particules se mettent en pause"
