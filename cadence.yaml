@@ -1,3 +1,7 @@
+# Fichiers dérivés du plan : un commit qui ne touche que le plan et ceux-ci est de
+# l'entretien du plan (pas de lot à citer).
+plan:
+  files: [frontend/public/nouveautes-data/nouveautes.json]
 # Livraison par `cadence deliver` (https://github.com/Sylad/cadence).
 # Cloudflare Pages (intégration Git) construit et publie lui-même à chaque push sur main :
 # pas de CI GitHub, rien à lancer pour déployer. La livraison se prouve par la page
