@@ -16,7 +16,7 @@ const { Content } = await render(entry);
 
 ---
 <CodexLayout title={`${entry.data.title} — Eywa`} current="personnages">
-  <article class="prose prose-invert max-w-4xl mx-auto">
+  <article class="prose prose-invert reading-veil max-w-4xl mx-auto">
     <EntryCover cover={entry.data.cover} title={entry.data.title} section="Personnages" />
     <h1 class="font-display text-4xl text-eywa-bio-primary mb-3">{entry.data.title}</h1>
     <p class="text-eywa-text-muted text-lg italic mb-10">{entry.data.summary}</p>

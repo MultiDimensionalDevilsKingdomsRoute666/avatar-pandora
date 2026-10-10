@@ -149,3 +149,16 @@
     animation: none;
   }
 }
+
+/* Voile sombre sous le texte des fiches (L27, WCAG 1.4.3) : le texte courant du codex ne
+   se pose jamais directement sur les particules WebGL, comme le voile de l'accueil (L2). */
+.reading-veil {
+  background: rgba(10, 10, 31, 0.88);
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+}
+@media (min-width: 640px) {
+  .reading-veil {
+    padding: 2rem 2.5rem;
+  }
+}

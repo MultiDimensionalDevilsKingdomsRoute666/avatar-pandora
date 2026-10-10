@@ -180,6 +180,9 @@ const imgSrc = coverImageSrc(cover);
     position: relative;
     z-index: 2;
     padding: 1.25rem;
+    /* Voile sombre sous le texte (L27, WCAG 1.4.3) : les particules WebGL passent
+       derrière la carte, le résumé ne doit pas les voir (même principe que L2). */
+    background: rgba(10, 10, 31, 0.88);
   }
 
   .entry-card__title {
