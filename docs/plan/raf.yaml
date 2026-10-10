@@ -258,3 +258,5 @@ lots:
     status: todo
     estimate: 0.5
     created: 2026-10-10
+acknowledged:
+  - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
