@@ -1,6 +1,6 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-10 21:02",
+  "generated": "2026-10-10 21:23",
   "entries": [
     {
       "slug": "2026-10-10-codex-le-texte-reste-lisible-au-dessus-des-particules",
@@ -13,7 +13,7 @@
         "captures/L27-cartes-clans.png"
       ],
       "alts": [
-        "La page Clans : les résumés des cartes se lisent sur un fond sombre, sans être traversés par les particules."
+        "La page Clans : deux rangées de cartes, avec le titre et le résumé de chaque clan sur un fond sombre uni, tandis que les particules lumineuses flottent autour des cartes, sans passer derrière les textes."
       ],
       "html": "<p>Dans le codex, les particules lumineuses qui flottent en fond passaient parfois derrière le texte et le rendaient difficile à lire : les résumés sous les cartes, et le texte des fiches.</p>\n<p>Le texte des fiches (clans, bestiaire, flore, personnages, films, engins, Pandora) et la page Langue Na'vi reposent maintenant sur un fond sombre, de même que le corps de chaque carte. Les particules continuent de flotter autour, mais plus derrière les mots.</p>"
     },
