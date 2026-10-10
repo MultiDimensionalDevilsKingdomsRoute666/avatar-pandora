@@ -8,6 +8,8 @@ import { setupBrowser, worstPixelContrast } from './lib/e2e-dist.mjs';
 const CASES = [
   { path: '/clans/', sel: '.entry-card__summary', label: 'résumé de carte' },
   { path: '/clans/omatikaya/', sel: 'article .font-body p', label: 'paragraphe de fiche' },
+  { path: '/langue/', sel: 'header p.italic', label: 'chapô de la page Langue' },
+  { path: '/langue/', sel: 'header h1', label: 'titre de la page Langue' },
 ];
 
 test('texte du codex (fiche, résumés de cartes) ≥ 4,5:1 au pire pixel du fond (1440/390 px)', { timeout: 360_000 }, async (t) => {
