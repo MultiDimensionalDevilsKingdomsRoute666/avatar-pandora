@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-10 21:23",
+  "generated": "2026-10-10 21:38",
   "entries": [
+    {
+      "slug": "2026-10-10-codex-les-particules-se-mettent-en-pause",
+      "title": "Codex : les particules se mettent en pause",
+      "date": "2026-10-10",
+      "lots": [
+        "L28"
+      ],
+      "captures": [
+        "captures/L28-codex-pause.png"
+      ],
+      "alts": [
+        "La page Clans du codex, avec en bas à droite le bouton de pause de l’ambiance, en mode reprise : les particules sont figées."
+      ],
+      "html": "<p>Dans le codex, les particules lumineuses flottaient sans arrêt et rien ne permettait de les arrêter.</p>\n<p>Un bouton rond apparaît maintenant en bas à droite de chaque page du codex : un clic met les particules en pause, un second les relance. Les halos de fond, la pulsation des mots et la respiration du menu s'arrêtent avec elles, et le pointeur n'attire plus les particules.</p>\n<p>Sur l'accueil, la pause arrête désormais aussi ces animations de fond. Ton choix est mémorisé d'une page et d'une visite à l'autre. Si ton appareil demande de réduire les animations, rien ne bouge et le bouton n'est pas affiché.</p>"
+    },
     {
       "slug": "2026-10-10-codex-le-texte-reste-lisible-au-dessus-des-particules",
       "title": "Codex : le texte reste lisible au-dessus des particules",
