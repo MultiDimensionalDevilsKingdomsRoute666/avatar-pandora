@@ -221,6 +221,7 @@ lots:
     visible: true
     created: 2026-10-10
     started: 2026-10-10
+    review: { date: 2026-10-10, verdict: "conforme : le texte des 7 types de fiches, de Langue et des cartes mesure au moins 8,16:1 au pire pixel à 1440 et 390 px (104/104 tests) ; aucun écart — orchestré (vague 2026-10-10-2010, 2 passe(s) de correction)", commit: 39594226991c2f26bd5d82d3e0d4520ae59106fc }
   - id: L28
     title: Particules du codex sans pause et pause de l'accueil ignorée (mouvement mesuré à 3 s) — bouton pause dans CodexLayout, CodexAmbient sur l'horloge partagée (WCAG 2.2.2, revue UX L3, bloquant)
     public: "Codex : les particules se mettent en pause"
