@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-02 10:03",
+  "generated": "2026-10-10 20:08",
   "entries": [
+    {
+      "slug": "2026-10-10-personnages-le-bandeau-n-est-plus-rogne-au-telephone",
+      "title": "Personnages : le bandeau n'est plus rogné au téléphone",
+      "date": "2026-10-10",
+      "lots": [
+        "L26"
+      ],
+      "captures": [
+        "captures/L26-bandeau-personnages-320.png"
+      ],
+      "alts": [
+        "Le bandeau de la page Personnages sur un écran de 320 px : « V — Personnages » et le titre sont entiers."
+      ],
+      "html": "<p>Sur un petit écran, le bandeau en tête de chaque section du codex coupait son texte : à 320 px de large, « V — Personnages » et le début du titre sortaient de l'image.</p>\n<p>Le bandeau s'allonge maintenant autant qu'il le faut : le sur-titre, le titre et la phrase d'accroche s'affichent en entier, de la page Personnages à Bestiaire, Clans, Pandora, Flore, Films et Engins. Rien ne change sur ordinateur ni sur tablette.</p>"
+    },
     {
       "slug": "2026-10-02-nouveautes-une-pastille-pour-tous-un-bouton-pour-copier-le-l",
       "title": "Nouveautés : une pastille pour tous, un bouton pour copier le lien",

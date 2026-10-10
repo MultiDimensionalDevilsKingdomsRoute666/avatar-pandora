@@ -37,7 +37,12 @@ const imgSrc = coverImageSrc(cover);
   .section-hero {
     position: relative;
     /* Mobile : 16:10 (lisible sur tel), desktop : 21:9 (cinéma). */
-    aspect-ratio: 16 / 10;
+    /* Sous 768 px le texte est dans le flux : le bandeau grandit avec lui au lieu de
+       le rogner (WCAG 1.4.10). Le 16:10 n'est qu'un minimum, tenu par ::before
+       (aspect-ratio ne le ferait pas : overflow: hidden annule la taille minimale
+       automatique). */
+    display: flex;
+    align-items: flex-end;
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -47,9 +52,18 @@ const imgSrc = coverImageSrc(cover);
       0 0 0 1px rgba(95, 255, 230, 0.06) inset,
       0 0 30px -8px rgba(95, 255, 230, 0.20);
   }
+  .section-hero::before {
+    content: '';
+    flex: none;
+    width: 0;
+    padding-top: 62.5%;
+  }
   @media (min-width: 768px) {
     .section-hero {
       aspect-ratio: 21 / 9;
+    }
+    .section-hero::before {
+      display: none;
     }
   }
 
@@ -131,14 +145,16 @@ const imgSrc = coverImageSrc(cover);
   }
 
   .section-hero__content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
     padding: 1.25rem 1.25rem 1.1rem;
   }
   @media (min-width: 768px) {
     .section-hero__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 2.5rem 2.5rem 2rem;
     }
   }
