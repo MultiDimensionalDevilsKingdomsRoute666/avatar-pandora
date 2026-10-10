@@ -207,10 +207,11 @@ lots:
   - id: L26
     title: "Bandeau de section rogné au téléphone : 88 px coupés à 320 (« V — Personnages » + « Figures de »), 7 px à 360 — hauteur au contenu sous 768 px dans SectionHero (WCAG 1.4.10, revue UX L3, bloquant)"
     public: "Personnages : le bandeau n'est plus rogné au téléphone"
-    status: todo
+    status: doing
     estimate: 0.25
     visible: true
     created: 2026-10-10
+    started: 2026-10-10
   - id: L27
     title: "Texte du codex sur les particules : pire pixel 1,17:1 (fiche) et 1,92:1 (résumés de cartes) — voile sombre sous l'article et le corps des cartes comme L2 (WCAG 1.4.3, revue UX L3, bloquant)"
     public: "Codex : le texte reste lisible au-dessus des particules"
