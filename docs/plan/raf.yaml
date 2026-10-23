@@ -51,51 +51,61 @@ lots:
   - id: L4
     title: Revue UX — Pandora (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L5
     title: Revue UX — Flore (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L6
     title: Revue UX — Films (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L7
     title: Revue UX — Engins (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L9
     title: Revue UX — Bestiaire (liste + fiche)
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L10
     title: Revue UX — Langue
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L11
     title: Revue UX — Vidéos
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L12
     title: Revue UX — À propos
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L13
     title: "Revue UX — Gabarit commun : navigation, en-tête, pied, rendu téléphone"
     status: todo
+    visible: true
     estimate: 0.25
     created: 2026-09-28
   - id: L14
