@@ -1,5 +1,5 @@
 // L20 — page « Plan de travail » (/plan-de-travail/) : en cours, prévu, récemment livré,
-// générée AU BUILD depuis docs/plan/raf.yaml. Titres et états seulement : AUCUN texte de
+// générée AU BUILD depuis .cadence/raf.yaml. Titres et états seulement : AUCUN texte de
 // note (ni verdict UX, ni raison d'abandon, ni titre de sous-tâche) ne doit sortir dans
 // le site construit — vérifié sur TOUS les fichiers de frontend/dist (formes échappées
 // HTML et JSON comprises). Repris d'evatosorus après sa relecture et sa revue UX.
@@ -17,7 +17,7 @@ import { newsTitlesByLot, publicTitleOf } from '../frontend/src/lib/plan-public.
 
 const require = createRequire(new URL('../frontend/package.json', import.meta.url));
 const { parse } = require('yaml');
-const RAF = parse(readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8'));
+const RAF = parse(readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8'));
 const PAGE = join(DIST, 'plan-de-travail', 'index.html');
 const html = () => readFileSync(PAGE, 'utf8');
 

@@ -1,4 +1,4 @@
-// L20 — page « Plan de travail » : ce qui est publié du plan (docs/plan/raf.yaml).
+// L20 — page « Plan de travail » : ce qui est publié du plan (.cadence/raf.yaml).
 // Repris d'evatosorus (L28), modèle finance-tracker : un lot n'apparaît que s'il est
 // `visible: true` ET a un titre PUBLIC — son champ `public:`, sinon le titre de son entrée
 // Nouveautés, sinon il est masqué ; JAMAIS le titre brut du plan. Liste blanche : id, titre
@@ -90,7 +90,7 @@ test('newsTitlesByLot : titre de l’entrée la plus récente (première du JSON
 });
 
 test('le vrai raf.yaml : aucun titre brut (sauf s’il est aussi le titre public), aucune note ni sous-tâche publiée', () => {
-  const text = readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8');
+  const text = readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8');
   const entries = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8')).entries;
   const p = parsePublicPlan(text, entries);
   const shown = [...p.doing, ...p.todo, ...p.done];
@@ -150,7 +150,7 @@ test('raf.yaml absent ou illisible au build : erreur explicite (le build échoue
 });
 
 test('le vrai plan : L20 et L21 publiés en cours sous leur titre public', () => {
-  const text = readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8');
+  const text = readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8');
   const entries = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8')).entries;
   const raf = parse(text);
   const p = parsePublicPlan(text, entries);

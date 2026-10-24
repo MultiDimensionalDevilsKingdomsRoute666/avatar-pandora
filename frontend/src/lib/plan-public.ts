@@ -1,5 +1,5 @@
 /**
- * L20 — ce que la page « Plan de travail » publie du plan (docs/plan/raf.yaml, tenu par raf).
+ * L20 — ce que la page « Plan de travail » publie du plan (.cadence/raf.yaml, tenu par raf).
  * Repris d'evatosorus (L28, après sa relecture et sa revue UX), règles de finance-tracker :
  *
  *   1. seuls les lots `visible: true` (changements pour le visiteur) et non abandonnés ;
@@ -195,7 +195,7 @@ export function parsePublicPlan(
 ): PublicPlan {
   const plan: unknown = parse(yamlText);
   if (typeof plan !== 'object' || plan === null || !Array.isArray((plan as { lots?: unknown }).lots)) {
-    throw new Error('docs/plan/raf.yaml : pas de liste « lots » — plan illisible, build arrêté');
+    throw new Error('.cadence/raf.yaml : pas de liste « lots » — plan illisible, build arrêté');
   }
   return publicPlan(plan, { newsTitles: newsTitlesByLot(newsEntries) });
 }
@@ -212,7 +212,7 @@ export function loadPublicPlan(
   try {
     text = readFileSync(rafPath, 'utf8');
   } catch (e) {
-    throw new Error(`docs/plan/raf.yaml introuvable (${rafPath}) : build arrêté — ${(e as Error).message}`);
+    throw new Error(`.cadence/raf.yaml introuvable (${rafPath}) : build arrêté — ${(e as Error).message}`);
   }
   return parsePublicPlan(text, newsEntries);
 }

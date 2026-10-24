@@ -81,7 +81,7 @@ Qualité avant tout. Spec validée : `docs/superpowers/specs/2026-05-02-avatar-p
 
 ## Plan, sessions et revue UX (cadence)
 
-Le reste à faire vit dans `docs/plan/raf.yaml`, tenu par `raf`
+Le reste à faire vit dans `.cadence/raf.yaml`, tenu par `raf`
 ([cadence](https://github.com/Sylad/cadence)) : chaque commit cite son lot dans le
 message (`fix(L4): …`, `L2/t1`), `raf now` dit la suite, `raf check` repère les
 écarts. Début et fin de session : skills `/cadence:session-start` et
@@ -123,8 +123,8 @@ texte agrandi (×1,25, espacement WCAG 1.4.12) fait passer un libellé à la lig
 déborder la rangée.
 
 **Plan de travail** (page `/plan-de-travail/`, L20, modèle evatosorus/finance-tracker) : en cours, prévu,
-récemment livré, rendue **au build** depuis `docs/plan/raf.yaml` (`src/lib/plan-public.ts`, lu depuis
-`frontend/` : `../docs/plan/raf.yaml`, vrai aussi sur Cloudflare Pages dont la commande est
+récemment livré, rendue **au build** depuis `.cadence/raf.yaml` (`src/lib/plan-public.ts`, lu depuis
+`frontend/` : `../.cadence/raf.yaml`, vrai aussi sur Cloudflare Pages dont la commande est
 `cd frontend && …`). `raf.yaml` absent ou sans `lots` = build en échec. Ne sont publiés que les lots
 `visible: true`, non abandonnés, qui ont un **titre public** : champ `public:` du lot, sinon titre de la
 Nouveauté la plus récente qui le cite ; les lots « Revue … » exigent un `public:` ; sinon masqués. Liste
