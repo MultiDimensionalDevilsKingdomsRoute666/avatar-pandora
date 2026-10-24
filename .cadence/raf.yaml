@@ -318,6 +318,7 @@ lots:
     estimate: 0.1
     created: 2026-10-24
     started: 2026-10-24
+    review: { date: 2026-10-24, verdict: "compliant: déplacement vers .cadence/raf.yaml complet, plus aucune référence à docs/plan hors le titre historique de L174, build 81 pages et 112/112 tests verts. Seul reste un écart de `raf check` hérité du message de commit 4766985 (L284 inconnu), qui ne vient pas du code. — orchestré (vague 2026-10-24-2005, 0 passe(s) de correction)", commit: 1ce52de6e5db5d934d9e275ef56c9fbf18a4ac4a }
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
