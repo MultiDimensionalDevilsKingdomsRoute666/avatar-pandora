@@ -22,3 +22,14 @@ orchestrate:
     command: 'cd frontend && npx astro dev --port 4313 --host 127.0.0.1'
     url: http://127.0.0.1:4313
     timeout: 300
+
+# Documentation qui suit le code (cadence docs.sync, L307 de cadence, 24-10) : raf check et la revue signalent un lot dont le code laisse sa doc en retard ; docs.articles = étude de cas du projet dans claude-code-codex (le bibliothécaire propose un lot là-bas).
+docs:
+  sync:
+    # Site Astro statique : pages, composants, layouts, lib (hors contenu du codex, hors CSS, hors tests) décrits par l'arbre du README, le CLAUDE.md et HOW-IT-WORKS ; une Nouveauté vaut pour un changement visible.
+    - paths: ['frontend/src/**', 'frontend/astro.config.mjs', '!frontend/src/content/**', '!**/*.css', '!**/*.test.*', '!**/*.spec.*', '!**/__snapshots__/**']
+      docs: [README.md, CLAUDE.md, HOW-IT-WORKS.md, 'docs/nouveautes/*.md']
+  since: 2026-10-24
+  articles:
+    - repo: ../claude-code-codex
+      file: frontend/src/pages/case-studies/avatar-pandora.astro
