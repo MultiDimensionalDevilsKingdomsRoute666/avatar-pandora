@@ -21,9 +21,11 @@ orchestrate:
   # Porte de tests (L38, 25-10) : la vague lance ces deux commandes après chaque écriture ; un rouge part en correction.
   # Vérifiées vertes sur main le 25-10 : 112/112 tests, 81 pages construites. Il n'y a rien d'autre à tester : le projet n'a
   # que la suite `node --test` des scripts (données de Nouveautés et du Plan de travail, tests navigateur sur frontend/dist).
-  # Les tests navigateur lisent frontend/dist (sinon ils passent en « skip ») : `test` construit d'abord, sans dépendre de l'ordre des deux portes.
+  # Les tests navigateur lisent frontend/dist (sinon ils passent en « skip »).
   build: 'cd frontend && npm run build'
-  test: 'cd frontend && npm run build && npm run test:scripts'
+  # L39 (25-10) : cadence joue maintenant `build` AVANT `test`, ligne de base comprise (cadence L333) — le build
+  # n'est plus répété ici ; les tests qui lisent frontend/dist le trouvent construit par la porte `build`.
+  test: 'cd frontend && npm run test:scripts'
   # Précheck sur Sonnet (cadence L328) : tranche si le livrable d'un lot est déjà là avant de lancer le travail.
   precheck: true
   ux:
