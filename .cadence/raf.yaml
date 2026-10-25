@@ -322,9 +322,10 @@ lots:
     finished: 2026-10-24
   - id: L38
     title: "config cadence : porte de tests — orchestrate.test (cd frontend && npm run test:scripts, node --test des scripts, vérifié vert sur main avant d'être déclaré ; s'il n'y a rien d'autre à tester, le dire dans le commentaire) et orchestrate.build (astro build, vérifié vert), dans cadence.yaml avec un commentaire ; precheck: true ; CLAUDE.md si la section cadence le décrit"
-    status: todo
+    status: doing
     estimate: 0.1
     created: 2026-10-25
+    started: 2026-10-25
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
