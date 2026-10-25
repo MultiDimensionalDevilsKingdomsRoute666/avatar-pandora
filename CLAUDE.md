@@ -87,6 +87,10 @@ message (`fix(L4): …`, `L2/t1`), `raf now` dit la suite, `raf check` repère l
 écarts. Début et fin de session : skills `/cadence:session-start` et
 `/cadence:session-close`.
 
+**Porte de tests des vagues** (`orchestrate` de `cadence.yaml`, L38) : `build` = `cd frontend && npm run build`,
+`test` = `cd frontend && npm run build && npm run test:scripts` (les tests navigateur lisent `frontend/dist`).
+Il n'y a pas d'autre suite que le `node --test` des scripts. `precheck: true`.
+
 **Revue UX obligatoire** (règle de Sylvain du 2026-09-28, tous les projets perso) : toute nouvelle
 page ou modification d'écran est un lot `--visible`, revu par l'agent `cadence:ux-reviewer` (captures
 1440 et 390 px, écarts fondés sur une règle nommée ou une mesure) avant `raf done`. Le verdict
