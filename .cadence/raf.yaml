@@ -330,6 +330,16 @@ lots:
     finished: 2026-10-25
     notes:
       - { date: 2026-10-25, text: "Re-vérifié par le lead le 25-10 : astro build vert, node --test 112/112 (0 skip), arbre propre après build, raf check propre. Config seule : rien à livrer." }
+  - id: L39
+    title: "config cadence : retirer le build en double de orchestrate.test — cadence L333 joue build avant test, ligne de base comprise (lead 25-10)"
+    status: done
+    estimate: 0.05
+    created: 2026-10-25
+    started: 2026-10-25
+    review: { date: 2026-10-25, verdict: "conforme (lead : config d'une ligne, build puis test rejoués verts à la main)", commit: 2bfc0fc68f454bc4931f055ebcdefcdf91396692 }
+    finished: 2026-10-25
+    notes:
+      - { date: 2026-10-25, text: "Re-vérifié par le lead le 25-10 : build puis test dans l'ordre de la porte, verts. Config seule : rien à livrer." }
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
