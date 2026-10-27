@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-10 22:05",
+  "generated": "2026-10-27 19:56",
   "entries": [
+    {
+      "slug": "2026-10-27-pandora-un-retour-clair-depuis-chaque-fiche-et-des-titres-mi",
+      "title": "Pandora : un retour clair depuis chaque fiche et des titres mieux ordonnés",
+      "date": "2026-10-27",
+      "lots": [
+        "L4"
+      ],
+      "captures": [
+        "captures/L4-pandora-retour-fiche-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche Pandora sur un écran de 390 px : le lien « ← Toutes les entrées de Pandora » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Pandora, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Toutes les entrées de Pandora » et sa zone fait au moins 44 px de haut, à toutes les largeurs : on sait où l'on revient et on l'atteint du pouce.</p>\n<p>Sur la liste, les titres des cartes suivent maintenant directement le titre de la page, sans niveau sauté : les lecteurs d'écran et les outils de navigation par titres s'y retrouvent. L'aspect des cartes ne change pas, et la même correction vaut pour les listes Personnages, Bestiaire, Clans, Flore, Films et Engins.</p>"
+    },
     {
       "slug": "2026-10-10-codex-les-particules-se-mettent-en-pause",
       "title": "Codex : les particules se mettent en pause",
