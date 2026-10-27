@@ -352,6 +352,14 @@ lots:
     started: 2026-10-25
     review: { date: 2026-10-25, verdict: "conforme (lead : clé de config d'une ligne, lue sans erreur par cadence orchestrate --dry-run 1.12)", commit: ddc5f3803a7314404eded39a001ad21a572ed50c }
     finished: 2026-10-25
+  - id: L41
+    title: Article avatar-pandora à rafraîchir
+    status: todo
+    estimate: 0.5
+    created: 2026-10-27
+    repos: [ { path: ../claude-code-codex, cite: avatar-pandora } ]
+    notes:
+      - { date: 2026-10-27, text: "Livraison 6459fd7 : titres publics livrés « Pandora : un retour clair depuis chaque fiche et des titres mieux ordonnés ». Article : ../claude-code-codex/frontend/src/pages/case-studies/avatar-pandora.astro. Sections à relire : (aucun titre trouvé : relire tout l'article). Réécrire ce que ces changements rendent faux ou incomplet, sans rien inventer ; les commits du dépôt ../claude-code-codex citent le lot et « avatar-pandora »." }
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
