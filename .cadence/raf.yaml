@@ -50,12 +50,14 @@ lots:
     finished: 2026-10-10
   - id: L4
     title: Revue UX — Pandora (liste + fiche)
-    status: doing
+    status: done
     visible: true
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-27
     review: { date: 2026-10-27, verdict: "compliant : 0 bloquant, 0 majeur, 1 mineur (repère <nav> du codex non nommé) — orchestré (vague 2026-10-27-1950, 0 passe(s) de correction)", commit: c07a0f177286bc35a7d56dd5f5e668634c67c92e }
+    ux: { date: 2026-10-27, verdict: "lead (captures regardées : retour « ← Toutes les entrées de Pandora » en bas de fiche à 390 et 1440, titres de cartes en h2) : conforme, 1 mineur (<nav> du codex sans nom)" }
+    finished: 2026-10-27
   - id: L5
     title: Revue UX — Flore (liste + fiche)
     status: todo
