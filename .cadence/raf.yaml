@@ -76,6 +76,7 @@ lots:
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-29
+    review: { date: 2026-10-29, verdict: "conforme, 2 mineurs (pause inerte dessinée sur le tiroir ouvert ; Nouveauté muette sur la bande du haut) — orchestré (vague 2026-10-29-av6, 2 passe(s) de correction)", commit: a3ca264e7498ef508c2352a87969702f3dbb3cef }
   - id: L7
     title: Revue UX — Engins (liste + fiche)
     status: todo
