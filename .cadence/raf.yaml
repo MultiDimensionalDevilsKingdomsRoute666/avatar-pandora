@@ -81,10 +81,11 @@ lots:
     finished: 2026-10-29
   - id: L7
     title: Revue UX — Engins (liste + fiche)
-    status: todo
+    status: doing
     visible: true
     estimate: 0.25
     created: 2026-09-28
+    started: 2026-10-29
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     status: todo
