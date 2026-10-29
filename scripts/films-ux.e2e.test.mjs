@@ -42,3 +42,53 @@ test('R3 — fiche Films : le bloc de retour est un repère nommé, distinct de 
     [...document.querySelectorAll('main nav, article nav')].filter((n) => !n.getAttribute('aria-label')).length);
   assert.equal(unnamed, 0, 'nav sans nom dans la fiche');
 });
+
+// Au téléphone, menu et pause sont fixes : sans bande pleine derrière eux, ils recouvraient une
+// ligne de texte à 68 positions de défilement sur 82 (mesure de la revue UX L6, 390×844).
+for (const path of ['/films/voie-de-leau/', '/films/']) {
+  test(`R4 — ${path} @390px : au défilement, menu et pause ne recouvrent aucune ligne de texte (bande pleine derrière eux)`, { timeout: 90_000 }, async (t) => {
+    const env = await setupBrowser(t);
+    if (!env) return;
+    const context = await env.browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true });
+    const page = await context.newPage();
+    await page.goto(`${env.base}${path}`, { waitUntil: 'load' });
+    await page.evaluate(() => document.fonts.ready);
+    const total = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
+    assert.ok(total > 800, `page trop courte pour défiler (${total} px)`);
+    const bad = [];
+    for (let y = 0; y <= total; y += 40) {
+      await page.evaluate((top) => window.scrollTo(0, top), y);
+      const found = await page.evaluate(() => {
+        const rect = (e) => e?.getBoundingClientRect();
+        const bar = rect(document.querySelector('.eywa-topbar'));
+        const barAlpha = (() => {
+          const m = /rgba?\(([^)]+)\)/.exec(getComputedStyle(document.querySelector('.eywa-topbar') ?? document.body).backgroundColor);
+          const p = m ? m[1].split(',').map(Number) : [];
+          return p.length === 4 ? p[3] : 1;
+        })();
+        const buttons = ['eywa-burger', 'eywa-atmo-toggle'].map((id) => [id, rect(document.getElementById(id))]);
+        const hits = [];
+        const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);
+        for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+          if (!n.textContent.trim()) continue;
+          const range = document.createRange();
+          range.selectNodeContents(n);
+          for (const r of range.getClientRects()) {
+            if (r.width < 1 || r.height < 1) continue;
+            for (const [id, b] of buttons) {
+              const over = Math.min(r.right, b.right) - Math.max(r.left, b.left) > 0
+                && Math.min(r.bottom, b.bottom) - Math.max(r.top, b.top) > 0;
+              const hidden = bar && barAlpha >= 0.9 && b.top >= bar.top && b.bottom <= bar.bottom
+                && b.left >= bar.left && b.right <= bar.right;
+              if (over && !hidden) hits.push(`${id} sur « ${n.textContent.trim().slice(0, 30)} »`);
+            }
+          }
+        }
+        return hits;
+      });
+      if (found.length) bad.push(`${y}px : ${found[0]}`);
+    }
+    assert.deepEqual(bad, [], `${bad.length} positions avec recouvrement, ex. ${bad[0]}`);
+    await context.close();
+  });
+}

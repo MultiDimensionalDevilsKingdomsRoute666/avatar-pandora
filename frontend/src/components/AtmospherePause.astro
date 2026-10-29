@@ -8,14 +8,14 @@
   l'ambiance (images de fond + particules, cinema/atmosphere-clock.ts) et les
   animations CSS du logo ; choix mémorisé dans localStorage comme l'audio.
   Posé sur l'accueil ET dans CodexLayout (L28, revue UX L3) : les particules du codex
-  suivent la même horloge. Dans le codex (`codex`), le bouton reste en bas à droite à toute
-  largeur — le coin haut droit du téléphone est pris par le bouton de menu.
+  suivent la même horloge. Dans le codex (`codex`), le bouton est en bas à droite dès 1024 px ;
+  en dessous, il est dans la bande du haut, à gauche du bouton de menu.
   Masqué en mouvement réduit : il n'y a alors rien d'animé à arrêter.
 */
 import { HAS_AMBIENT_AUDIO } from '../lib/ambient-audio';
 
 interface Props {
-  /** Page du codex : reste en bas à droite au téléphone (le menu occupe le haut). */
+  /** Page du codex : sous 1024 px, dans la bande du haut à gauche du bouton menu. */
   codex?: boolean;
 }
 const { codex = false } = Astro.props;
@@ -118,9 +118,11 @@ const { codex = false } = Astro.props;
     .eywa-atmo-toggle { top: 0.5rem; bottom: auto; right: 0.5rem; }
     .eywa-atmo-toggle--beside-audio { right: 3.5rem; }
   }
-  @media (max-width: 480px) {
-    .eywa-atmo-toggle--codex { top: auto; bottom: 1rem; right: 1rem; }
-    .eywa-atmo-toggle--codex.eywa-atmo-toggle--beside-audio { right: 4rem; }
+  /* Codex sous 1024 px (revue UX L6) : dans la bande du haut, à gauche du bouton menu
+     (2,75 rem + 0,85 rem de marge + 0,5 rem d'écart). En bas, il recouvrait le texte. */
+  @media (max-width: 1023px) {
+    .eywa-atmo-toggle--codex { top: 0.975rem; bottom: auto; right: 4.1rem; }
+    .eywa-atmo-toggle--codex.eywa-atmo-toggle--beside-audio { right: 4.1rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     .eywa-atmo-toggle { display: none; }
