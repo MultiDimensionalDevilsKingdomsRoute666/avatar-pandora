@@ -171,3 +171,22 @@
     padding: 2rem 2.5rem;
   }
 }
+
+/* Corps des fiches (L42) : `prose prose-invert` est sans effet (@tailwindcss/typography n'est pas
+   installé), et le préflight de Tailwind remet les marges à 0 — le texte des fiches faisait un
+   mur. Règle locale plutôt que le plugin : elle ne vise que le corps rendu du Markdown. */
+.entry-body > p,
+.entry-body > ul,
+.entry-body > ol,
+.entry-body > blockquote {
+  margin-block: 0 1.1em;
+}
+.entry-body > ul,
+.entry-body > ol {
+  padding-inline-start: 1.4em;
+  list-style: revert;
+}
+.entry-body > h2,
+.entry-body > h3 {
+  margin-block: 1.8em 0.6em;
+}
