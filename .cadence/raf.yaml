@@ -81,12 +81,14 @@ lots:
     finished: 2026-10-29
   - id: L7
     title: Revue UX — Engins (liste + fiche)
-    status: doing
+    status: done
     visible: true
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-29
     review: { date: 2026-10-29, verdict: "compliant — orchestré (vague 2026-10-29-fa1, 0 passe(s) de correction)", commit: 0fbe8036aad75e23bb8cc98e79a23ef0e68fa8b7 }
+    ux: { date: 2026-10-29, verdict: "conforme : captures 390 regardées par le lead — retour « ← Tous les engins » en bas de fiche, bande haute sans recouvrement, liste et cartes déjà conformes (h2 par carte)" }
+    finished: 2026-10-29
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     status: todo
