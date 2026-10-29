@@ -71,12 +71,14 @@ lots:
     finished: 2026-10-29
   - id: L6
     title: Revue UX — Films (liste + fiche)
-    status: doing
+    status: done
     visible: true
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-29
     review: { date: 2026-10-29, verdict: "conforme, 2 mineurs (pause inerte dessinée sur le tiroir ouvert ; Nouveauté muette sur la bande du haut) — orchestré (vague 2026-10-29-av6, 2 passe(s) de correction)", commit: a3ca264e7498ef508c2352a87969702f3dbb3cef }
+    ux: { date: 2026-10-29, verdict: "conforme : captures 390 regardées par le lead — pause et menu en bande haute sous 1024 px, plus de recouvrement du texte au défilement ; retour « ← Tous les films » ; liste déjà conforme" }
+    finished: 2026-10-29
   - id: L7
     title: Revue UX — Engins (liste + fiche)
     status: todo
