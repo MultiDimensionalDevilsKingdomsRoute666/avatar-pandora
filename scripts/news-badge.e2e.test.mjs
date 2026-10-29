@@ -5,6 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { setupBrowser } from './lib/e2e-dist.mjs';
+import { badgeLabel } from '../frontend/src/lib/news-seen.ts';
 
 const DATA = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8'));
 const KEY = 'eywa.news.seen-v1';
@@ -39,7 +40,7 @@ test('pastille : rien au premier passage, nombre d’entrées non vues ensuite, 
   let b = await badge(page);
   const n = DATA.entries.length;
   assert.ok(b.shown, 'pastille absente');
-  assert.equal(b.digits, String(n));
+  assert.equal(b.digits, badgeLabel(n));
   // Nom accessible du lien (le chiffre de la pastille est masqué, la phrase est lue).
   assert.equal(await page.getByRole('link', { name: new RegExp(`^Nouveautés \\(${n} nouveautés non vues\\)$`) }).count(), 1, `nom accessible : ${b.text}`);
 
