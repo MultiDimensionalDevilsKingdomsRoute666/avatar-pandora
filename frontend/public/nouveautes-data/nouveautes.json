@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-29 12:23",
+  "generated": "2026-10-29 15:21",
   "entries": [
+    {
+      "slug": "2026-10-29-fiches-des-paragraphes-aeres",
+      "title": "Fiches : des paragraphes aérés",
+      "date": "2026-10-29",
+      "lots": [
+        "L42"
+      ],
+      "captures": [
+        "captures/L42-fiche-390.png"
+      ],
+      "alts": [
+        "Le texte de la fiche Hometree sur un écran de 390 px : les paragraphes sont séparés par un espace."
+      ],
+      "html": "<p>Dans les fiches du codex, les paragraphes se suivaient sans aucun espace : au téléphone, le texte formait un bloc compact, pénible à lire.</p>\n<p>Chaque paragraphe est maintenant séparé du suivant, dans toutes les sections (Pandora, Clans, Bestiaire, Flore, Personnages, Films, Engins), à toutes les largeurs. Les listes et les intertitres des fiches sont aérés de la même façon.</p>"
+    },
     {
       "slug": "2026-10-29-flore-un-retour-clair-depuis-chaque-fiche",
       "title": "Flore : un retour clair depuis chaque fiche",
