@@ -86,6 +86,7 @@ lots:
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-29
+    review: { date: 2026-10-29, verdict: "compliant — orchestré (vague 2026-10-29-fa1, 0 passe(s) de correction)", commit: 0fbe8036aad75e23bb8cc98e79a23ef0e68fa8b7 }
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     status: todo
