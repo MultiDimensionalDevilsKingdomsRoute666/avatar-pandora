@@ -65,6 +65,7 @@ lots:
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-29
+    review: { date: 2026-10-29, verdict: "compliant : 0 bloquant, 0 majeur, 2 mineurs (espacement des paragraphes du corps de fiche nul, commun à toutes les sections ; repère <nav> du codex toujours sans nom). Les 4 choix de l'auteur tiennent (libellé, test dédié, capture du bas de fiche à 390 px, liste inchangée). Liste conforme (h1 puis h2), retour mesuré à 211×48 px à 390 px. — orchestré (vague 2026-10-29-ux2, 0 passe(s) de correction)", commit: fd4b0199ddc239037d543e7a461aab7db6b07fee }
   - id: L6
     title: Revue UX — Films (liste + fiche)
     status: todo
