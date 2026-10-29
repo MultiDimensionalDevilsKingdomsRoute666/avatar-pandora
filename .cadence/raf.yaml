@@ -374,6 +374,7 @@ lots:
     visible: true
     created: 2026-10-29
     started: 2026-10-29
+    review: { date: 2026-10-29, verdict: "compliant : aucun écart (les 7 modèles de fiche portent .entry-body ; marge basse 21,66 px = 1,1 em mesurée sur les paragraphes de /flore/hometree/ à 390 et 1440 px ; tests R1 sur toutes les fiches et R2 sur Hometree ; Nouveauté et README à jour) — orchestré (vague 2026-10-29-ae1, 0 passe(s) de correction)", commit: c6083adbd155ce35ad54553488e3b0fec45973b3 }
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
