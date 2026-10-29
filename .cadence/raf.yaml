@@ -369,10 +369,11 @@ lots:
   - id: L42
     title: "Fiches de toutes les sections : les paragraphes du corps n'ont aucun espacement (margin 0 mesurée sur /flore/hometree/, mur de texte à 390 px) — la classe prose prose-invert est sans effet faute de @tailwindcss/typography ; rétablir l'espacement (plugin ou règle locale) sur toutes les fiches, test de mesure ; vu à la revue UX de L5 (29-10)"
     public: "Fiches : des paragraphes aérés"
-    status: todo
+    status: doing
     estimate: 0.25
     visible: true
     created: 2026-10-29
+    started: 2026-10-29
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
