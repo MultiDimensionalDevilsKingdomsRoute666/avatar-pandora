@@ -71,6 +71,8 @@ npm run dev
 
 Le site n'a plus de backend : c'est le build qui valide la cohérence (Content Collections + schéma Zod, types, intégrations Astro). Les pages Nouveautés et Plan de travail, la navigation et le menu du téléphone sont testés dans un navigateur sur le site construit (Node ≥ 22.18, Chromium via `playwright-core`), dont le contraste du texte du codex (fiches et résumés de cartes) au pire pixel, voile sombre sous le texte (WCAG 1.4.3), et l'espacement des paragraphes du corps des fiches (règle `.entry-body` de `global.css`, mesurée sur toutes les fiches à 390 px).
 
+Ce que la QA attend du site public (accueil, Nouveautés, une fiche par section : `.entry-body` non vide, vide ≥ 16 px entre deux paragraphes à 390 et 1440 px) est écrit dans [`docs/qa/expectations.md`](docs/qa/expectations.md), et ses mesures sur les fiches sont rejouées par `scripts/qa-expectations.test.mjs`.
+
 ```bash
 cd frontend && npm run build   # 81 pages
 npm run test:scripts           # node --test ../scripts/*.test.mjs
