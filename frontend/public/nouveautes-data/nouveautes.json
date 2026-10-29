@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-29 19:02",
+  "generated": "2026-10-29 19:49",
   "entries": [
+    {
+      "slug": "2026-10-29-engins-un-retour-clair-depuis-chaque-fiche",
+      "title": "Engins : un retour clair depuis chaque fiche",
+      "date": "2026-10-29",
+      "lots": [
+        "L7"
+      ],
+      "captures": [
+        "captures/L7-engins-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche d'engin sur un écran de 390 px : le lien « ← Tous les engins » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Engins, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Tous les engins » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
     {
       "slug": "2026-10-29-films-un-retour-clair-depuis-chaque-fiche",
       "title": "Films : un retour clair depuis chaque fiche",
