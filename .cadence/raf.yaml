@@ -380,12 +380,13 @@ lots:
     finished: 2026-10-29
   - id: L43
     title: "Attentes QA d'Eywa : écrire docs/qa/expectations.md (accueil, Nouveautés, une fiche par section : .entry-body non vide, écart entre deux p ≥ 16 px à 390 et 1440) — brouillon de la QA de L42 (29-10)"
-    status: doing
+    status: done
     estimate: 0.1
     quickwin: true
     created: 2026-10-29
     started: 2026-10-29
     review: { date: 2026-10-29, verdict: "compliant (0 blocking, 0 major, 2 minor notes: mention de ChatGPT dans le document ; R3 qui ne peut pas échouer) — orchestré (vague 2026-10-29-oa1, 0 passe(s) de correction)", commit: ba5daef7eda621f27e00bc27a1e57caf66c54b53 }
+    finished: 2026-10-29
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
