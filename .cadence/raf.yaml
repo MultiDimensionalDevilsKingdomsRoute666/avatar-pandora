@@ -108,6 +108,7 @@ lots:
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-30
+    review: { date: 2026-10-30, verdict: "conforme : aucun constat, le lien de retour mesure 126×48 px à 390 px et le repère de navigation est nommé — orchestré (vague 2026-10-30-1420-av, 0 passe(s) de correction)", commit: 0b9b10a8e9a1225acbecf29d74e080e629aaf77f }
   - id: L10
     title: Revue UX — Langue
     status: todo
