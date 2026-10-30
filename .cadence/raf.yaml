@@ -92,10 +92,11 @@ lots:
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     public: "Pages des clans : lisibilité et accessibilité revues"
-    status: todo
+    status: doing
     visible: true
     estimate: 0.25
     created: 2026-09-28
+    started: 2026-10-30
   - id: L9
     title: Revue UX — Bestiaire (liste + fiche)
     status: todo
