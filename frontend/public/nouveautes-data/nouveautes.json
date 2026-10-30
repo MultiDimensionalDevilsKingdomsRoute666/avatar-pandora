@@ -1,7 +1,22 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-30 11:39",
+  "generated": "2026-10-30 20:30",
   "entries": [
+    {
+      "slug": "2026-10-30-page-langue-liens-soulignes-lexique-lisible-aux-lecteurs-d-e",
+      "title": "Page Langue : liens soulignés, lexique lisible aux lecteurs d'écran",
+      "date": "2026-10-30",
+      "lots": [
+        "L10"
+      ],
+      "captures": [
+        "captures/L10-langue-liens-390.png"
+      ],
+      "alts": [
+        "Le bas de la page Langue sur un écran de 390 px : le lexique, puis les trois liens de « Pour aller plus loin » soulignés."
+      ],
+      "html": "<p>Sur la page Langue, les liens sont maintenant soulignés : on les repère sans devoir distinguer deux teintes. Un lien qui s'ouvre dans un nouvel onglet le précise aux lecteurs d'écran, qui annoncent « (nouvel onglet) » après son nom.</p>\n<p>Le lexique de base est annoncé comme un tableau intitulé « Lexique de base », avec ses deux colonnes nommées. Les mots Na'vi sont signalés comme une autre langue : un lecteur d'écran ne les prononce plus comme du français. La ligne de source, en bas de page, est écrite à pleine teinte pour rester lisible sur le fond animé.</p>"
+    },
     {
       "slug": "2026-10-30-pages-du-bestiaire-lisibilite-et-accessibilite-revues",
       "title": "Pages du bestiaire : lisibilité et accessibilité revues",
