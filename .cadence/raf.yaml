@@ -102,6 +102,7 @@ lots:
     finished: 2026-10-30
   - id: L9
     title: Revue UX — Bestiaire (liste + fiche)
+    public: "Pages du bestiaire : lisibilité et accessibilité revues"
     status: todo
     visible: true
     estimate: 0.25
