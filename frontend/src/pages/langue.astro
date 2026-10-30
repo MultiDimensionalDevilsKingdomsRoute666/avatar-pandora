@@ -17,7 +17,7 @@ import CodexLayout from '../layouts/CodexLayout.astro';
     <section>
       <h2 class="font-display text-2xl text-eywa-bio-primary mb-4">Une langue, pas un effet sonore</h2>
       <p>
-        Quand James Cameron a entrepris <em>Avatar</em>, il voulait une langue Na'vi qui se tienne au-delà des bulles cosmétiques de cinéma. En 2005, il recrute le <strong>Dr Paul Frommer</strong>, linguiste de l'University of Southern California, qui passe quatre ans à construire une langue avec phonologie, morphologie, syntaxe et lexique cohérents. Le résultat se parle, s'écrit, et a même été appris par une communauté de fans qui le pratiquent encore aujourd'hui sur <a href="https://naviteri.org" target="_blank" rel="noopener" class="text-eywa-bio-primary hover:underline">Naviteri</a> et <a href="https://learnnavi.org" target="_blank" rel="noopener" class="text-eywa-bio-primary hover:underline">LearnNavi</a>.
+        Quand James Cameron a entrepris <em>Avatar</em>, il voulait une langue Na'vi qui se tienne au-delà des bulles cosmétiques de cinéma. En 2005, il recrute le <strong>Dr Paul Frommer</strong>, linguiste de l'University of Southern California, qui passe quatre ans à construire une langue avec phonologie, morphologie, syntaxe et lexique cohérents. Le résultat se parle, s'écrit, et a même été appris par une communauté de fans qui le pratiquent encore aujourd'hui sur <a href="https://naviteri.org" target="_blank" rel="noopener" class="text-eywa-bio-primary underline underline-offset-2 hover:no-underline">Naviteri<span class="sr-only"> (nouvel onglet)</span></a> et <a href="https://learnnavi.org" target="_blank" rel="noopener" class="text-eywa-bio-primary underline underline-offset-2 hover:no-underline">LearnNavi<span class="sr-only"> (nouvel onglet)</span></a>.
       </p>
     </section>
 
@@ -37,37 +37,37 @@ import CodexLayout from '../layouts/CodexLayout.astro';
     <section>
       <h2 class="font-display text-2xl text-eywa-bio-primary mb-4">Grammaire en cinq points</h2>
       <ul class="list-disc list-inside space-y-2 ml-2">
-        <li><strong>Ordre des mots libre</strong> — les déclinaisons portent le sens, pas la position. <em>Oel ngati kameie</em> et <em>Ngati oel kameie</em> veulent tous deux dire « je te vois ».</li>
+        <li><strong>Ordre des mots libre</strong> — les déclinaisons portent le sens, pas la position. <em lang="art-x-navi">Oel ngati kameie</em> et <em lang="art-x-navi">Ngati oel kameie</em> veulent tous deux dire « je te vois ».</li>
         <li><strong>Cinq cas grammaticaux</strong> — sujet, agent, patient, génitif, datif. Le système de cas est plus proche du finnois ou du basque que des langues romanes.</li>
-        <li><strong>Pas d'article</strong> — défini ou indéfini. <em>Eveng</em> = « enfant » ou « l'enfant » selon le contexte.</li>
-        <li><strong>Verbes infixés</strong> — les marqueurs de temps, d'aspect, et d'humeur s'insèrent au milieu du verbe (pas d'auxiliaires). <em>Tar-ol</em> = passé de <em>tar</em>.</li>
-        <li><strong>Inclusif vs exclusif</strong> — la première personne du pluriel a deux formes : <em>oeng</em> (toi et moi inclus) et <em>moe</em> (lui/elle et moi, sans toi). Pratique pour ne jamais se tromper sur qui fait partie du groupe.</li>
+        <li><strong>Pas d'article</strong> — défini ou indéfini. <em lang="art-x-navi">Eveng</em> = « enfant » ou « l'enfant » selon le contexte.</li>
+        <li><strong>Verbes infixés</strong> — les marqueurs de temps, d'aspect, et d'humeur s'insèrent au milieu du verbe (pas d'auxiliaires). <em lang="art-x-navi">Tar-ol</em> = passé de <em lang="art-x-navi">tar</em>.</li>
+        <li><strong>Inclusif vs exclusif</strong> — la première personne du pluriel a deux formes : <em lang="art-x-navi">oeng</em> (toi et moi inclus) et <em lang="art-x-navi">moe</em> (lui/elle et moi, sans toi). Pratique pour ne jamais se tromper sur qui fait partie du groupe.</li>
       </ul>
     </section>
 
     <section>
-      <h2 class="font-display text-2xl text-eywa-bio-primary mb-4">Lexique de base</h2>
-      <table class="w-full text-base border-collapse">
+      <h2 id="lexique" class="font-display text-2xl text-eywa-bio-primary mb-4">Lexique de base</h2>
+      <table aria-labelledby="lexique" class="w-full text-base border-collapse">
         <thead>
           <tr class="border-b border-eywa-text-muted/30">
-            <th class="text-left font-display py-3 text-eywa-bio-primary tracking-wide">Na'vi</th>
-            <th class="text-left font-display py-3 text-eywa-bio-primary tracking-wide">Français</th>
+            <th scope="col" class="text-left font-display py-3 text-eywa-bio-primary tracking-wide">Na'vi</th>
+            <th scope="col" class="text-left font-display py-3 text-eywa-bio-primary tracking-wide">Français</th>
           </tr>
         </thead>
         <tbody class="font-body">
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>kaltxì</em></td><td class="text-eywa-text-muted">bonjour</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>kìyevame</em></td><td class="text-eywa-text-muted">au revoir (litt. « à bientôt te revoir »)</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>irayo</em></td><td class="text-eywa-text-muted">merci</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>oel ngati kameie</em></td><td class="text-eywa-text-muted">« je te vois » — salutation spirituelle</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>tsaheylu</em></td><td class="text-eywa-text-muted">le lien (queue à queue, neural)</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>eywa ngahu</em></td><td class="text-eywa-text-muted">« qu'Eywa soit avec toi »</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>tsmukan / tsmuke</em></td><td class="text-eywa-text-muted">frère / sœur</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>eveng</em></td><td class="text-eywa-text-muted">enfant</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>tsahìk</em></td><td class="text-eywa-text-muted">guide spirituelle (féminin)</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>olo'eyktan</em></td><td class="text-eywa-text-muted">chef de clan</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>txon</em></td><td class="text-eywa-text-muted">nuit</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>trr</em></td><td class="text-eywa-text-muted">jour</td></tr>
-          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em>skxawng</em></td><td class="text-eywa-text-muted">idiot (insulte familière)</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">kaltxì</em></td><td class="text-eywa-text-muted">bonjour</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">kìyevame</em></td><td class="text-eywa-text-muted">au revoir (litt. « à bientôt te revoir »)</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">irayo</em></td><td class="text-eywa-text-muted">merci</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">oel ngati kameie</em></td><td class="text-eywa-text-muted">« je te vois » — salutation spirituelle</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">tsaheylu</em></td><td class="text-eywa-text-muted">le lien (queue à queue, neural)</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">eywa ngahu</em></td><td class="text-eywa-text-muted">« qu'Eywa soit avec toi »</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">tsmukan / tsmuke</em></td><td class="text-eywa-text-muted">frère / sœur</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">eveng</em></td><td class="text-eywa-text-muted">enfant</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">tsahìk</em></td><td class="text-eywa-text-muted">guide spirituelle (féminin)</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">olo'eyktan</em></td><td class="text-eywa-text-muted">chef de clan</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">txon</em></td><td class="text-eywa-text-muted">nuit</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">trr</em></td><td class="text-eywa-text-muted">jour</td></tr>
+          <tr class="border-b border-eywa-text-muted/15"><td class="py-2 text-eywa-text"><em lang="art-x-navi">skxawng</em></td><td class="text-eywa-text-muted">idiot (insulte familière)</td></tr>
         </tbody>
       </table>
     </section>
@@ -75,13 +75,13 @@ import CodexLayout from '../layouts/CodexLayout.astro';
     <section>
       <h2 class="font-display text-2xl text-eywa-bio-primary mb-4">Pour aller plus loin</h2>
       <ul class="list-disc list-inside space-y-1 ml-2">
-        <li><a href="https://naviteri.org" target="_blank" rel="noopener" class="text-eywa-bio-primary hover:underline">Naviteri.org</a> — blog officiel du Dr Paul Frommer (créateur de la langue, mises à jour régulières)</li>
-        <li><a href="https://learnnavi.org" target="_blank" rel="noopener" class="text-eywa-bio-primary hover:underline">LearnNavi.org</a> — communauté + dictionnaire Eana Eltu de référence</li>
-        <li><a href="https://en.wiktionary.org/wiki/Category:Na%27vi_lemmas" target="_blank" rel="noopener" class="text-eywa-bio-primary hover:underline">Wiktionary Na'vi</a> — lemmes en accès libre</li>
+        <li><a href="https://naviteri.org" target="_blank" rel="noopener" class="text-eywa-bio-primary underline underline-offset-2 hover:no-underline">Naviteri.org<span class="sr-only"> (nouvel onglet)</span></a> — blog officiel du Dr Paul Frommer (créateur de la langue, mises à jour régulières)</li>
+        <li><a href="https://learnnavi.org" target="_blank" rel="noopener" class="text-eywa-bio-primary underline underline-offset-2 hover:no-underline">LearnNavi.org<span class="sr-only"> (nouvel onglet)</span></a> — communauté + dictionnaire Eana Eltu de référence</li>
+        <li><a href="https://en.wiktionary.org/wiki/Category:Na%27vi_lemmas" target="_blank" rel="noopener" class="text-eywa-bio-primary underline underline-offset-2 hover:no-underline">Wiktionary Na'vi<span class="sr-only"> (nouvel onglet)</span></a> — lemmes en accès libre</li>
       </ul>
     </section>
 
-    <p class="text-sm text-eywa-text-muted/70 mt-12 italic">
+    <p class="text-sm text-eywa-text-muted mt-12 italic">
       Source : travaux du Dr Paul Frommer + communauté Naviteri.
     </p>
   </article>
