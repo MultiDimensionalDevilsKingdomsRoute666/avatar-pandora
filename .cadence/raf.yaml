@@ -113,10 +113,11 @@ lots:
     finished: 2026-10-30
   - id: L10
     title: Revue UX — Langue
-    status: todo
+    status: doing
     visible: true
     estimate: 0.25
     created: 2026-09-28
+    started: 2026-10-30
   - id: L11
     title: Revue UX — Vidéos
     status: todo
