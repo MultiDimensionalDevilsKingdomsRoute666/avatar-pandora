@@ -91,6 +91,7 @@ lots:
     finished: 2026-10-29
   - id: L8
     title: Revue UX — Clans (liste + fiche)
+    public: "Pages des clans : lisibilité et accessibilité revues"
     status: todo
     visible: true
     estimate: 0.25
