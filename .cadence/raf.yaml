@@ -92,12 +92,14 @@ lots:
   - id: L8
     title: Revue UX — Clans (liste + fiche)
     public: "Pages des clans : lisibilité et accessibilité revues"
-    status: doing
+    status: done
     visible: true
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-30
     review: { date: 2026-10-30, verdict: "compliant — 0 blocking, 0 major, 1 minor (note: nav du codex sans nom, hérité du gabarit commun) — orchestré (vague 2026-10-30-1315-av, 0 passe(s) de correction)", commit: 9e20cb2c932ec382f30a2a1af2d18c68d74fa269 }
+    ux: { date: 2026-10-30, verdict: "conforme, capture 390 de la fiche regardée par le lead (lien « ← Tous les clans » nommé, cible 44 px) ; liste déjà conforme (R1, R4) ; mineur : nav de la barre latérale du codex sans nom, hérité du gabarit commun (CodexLayout.astro)" }
+    finished: 2026-10-30
   - id: L9
     title: Revue UX — Bestiaire (liste + fiche)
     status: todo
