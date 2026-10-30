@@ -97,6 +97,7 @@ lots:
     estimate: 0.25
     created: 2026-09-28
     started: 2026-10-30
+    review: { date: 2026-10-30, verdict: "compliant — 0 blocking, 0 major, 1 minor (note: nav du codex sans nom, hérité du gabarit commun) — orchestré (vague 2026-10-30-1315-av, 0 passe(s) de correction)", commit: 9e20cb2c932ec382f30a2a1af2d18c68d74fa269 }
   - id: L9
     title: Revue UX — Bestiaire (liste + fiche)
     status: todo
