@@ -423,6 +423,7 @@ lots:
     estimate: 0.25
     created: 2026-10-30
     started: 2026-10-30
+    review: { date: 2026-10-30, verdict: "conforme : le test du vrai plan ne dépend plus de L20/L21 (propriété vraie quel que soit l'état, plus une fixture qui garde la règle) et le test de pause attend l'immobilité au lieu de délais fixes — orchestré (vague 2026-10-30-1720-av, 0 passe(s) de correction)", commit: 86300cc0d3832fa6689309577942deba182555b1 }
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
