@@ -119,6 +119,7 @@ lots:
     created: 2026-09-28
     started: 2026-10-30
     review: { date: 2026-10-30, verdict: "conforme : 1 note mineure (Kaltxì et Lì'fya leNa'vi de l'en-tête sans lang) — orchestré (vague 2026-10-30-2025-av, 1 passe(s) de correction)", commit: 07c3cd1c39fad6999a90ef65f499e6c3f0237d73 }
+    ux: { date: 2026-10-30, verdict: "conforme — revue UX de la vague (1 mineur : Kaltxì et Lì'fya leNa'vi de l'en-tête sans attribut lang) ; capture 390 vue par le lead (intertitres, listes, lexique en tableau, pas de débordement)" }
   - id: L11
     title: Revue UX — Vidéos
     status: todo
