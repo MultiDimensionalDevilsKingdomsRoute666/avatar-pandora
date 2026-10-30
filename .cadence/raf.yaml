@@ -419,9 +419,10 @@ lots:
     finished: 2026-10-30
   - id: L45
     title: "Porte rouge le 30-10 (30e8482) : le test « le vrai plan : L20 et L21 publiés en cours sous leur titre public » (test:scripts) lit le vrai .cadence/raf.yaml et casse dès que le plan avance — le rendre indépendant de l'état réel du plan (plan de fixture, ou propriété vraie quel que soit l'état : tout lot doing visible avec public: est publié en cours) ; et stabiliser « /clans/ @390px : bouton de pause présent, ambiance immobile 3 s après un clic », rouge sous charge (vu aussi par L9)"
-    status: todo
+    status: doing
     estimate: 0.25
     created: 2026-10-30
+    started: 2026-10-30
 acknowledged:
   - { sha: cef464dffb920ea7b161b1b0e06fe54d3efbdcc4, subject: "plan: verdicts UX de Sylvain enregistrés, trois bloquants de la revue des Personnages clos", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés }
   - { sha: 4bc75e983dc5bff0366190611a9c578d4ed071c8, subject: "plan: prototype Pandora vivant clos, cinq idées retenues par Sylvain posées après les images", date: 2026-10-10, reason: entretien du plan et régénération des Nouveautés (fichier désormais déclaré dérivé) }
