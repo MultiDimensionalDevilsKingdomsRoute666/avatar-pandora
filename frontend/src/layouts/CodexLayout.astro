@@ -42,6 +42,9 @@ const ambient = AMBIENTS[current ?? ''] ?? AMBIENTS.pandora;
   />
   <div class="bio-ambient" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
+  <!-- Bande pleine sous 1024 px (revue UX L6) : menu et pause fixes reposent dessus, le texte défile
+       dessous au lieu de passer derrière eux. -->
+  <div class="eywa-topbar" aria-hidden="true"></div>
   <AtmospherePause codex />
 
   <!--
@@ -70,7 +73,7 @@ const ambient = AMBIENTS[current ?? ''] ?? AMBIENTS.pandora;
 
   <div class="flex relative" data-codex-section={current ?? 'pandora'}>
     <Sidebar current={current} />
-    <main class="flex-1 px-4 sm:px-6 lg:px-10 py-12 max-w-7xl">
+    <main class="eywa-codex-main flex-1 px-4 sm:px-6 lg:px-10 py-12 max-w-7xl">
       <slot />
     </main>
   </div>
@@ -382,6 +385,24 @@ const ambient = AMBIENTS[current ?? ''] ?? AMBIENTS.pandora;
     Z-index plus haut que la sidebar pour rester accessible quand drawer
     fermé, et au-dessus de l'overlay quand ouvert.
   */
+  .eywa-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4.1rem;
+    z-index: 39; /* sous le voile du tiroir (40), au-dessus du contenu (2) */
+    background: rgba(8, 12, 22, 0.96);
+    border-bottom: 1px solid rgba(95, 255, 230, 0.12);
+    backdrop-filter: blur(6px);
+  }
+  @media (min-width: 1024px) {
+    .eywa-topbar { display: none; }
+  }
+  /* Le contenu commence sous la bande. */
+  @media (max-width: 1023px) {
+    :global(main.eywa-codex-main) { padding-top: 5.5rem; }
+  }
   .eywa-burger {
     position: fixed;
     top: 0.85rem;

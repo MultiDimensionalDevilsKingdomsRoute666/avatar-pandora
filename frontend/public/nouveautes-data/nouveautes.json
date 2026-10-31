@@ -1,7 +1,127 @@
 {
   "project": "avatar-pandora",
-  "generated": "2026-10-10 22:05",
+  "generated": "2026-10-30 20:30",
   "entries": [
+    {
+      "slug": "2026-10-30-page-langue-liens-soulignes-lexique-lisible-aux-lecteurs-d-e",
+      "title": "Page Langue : liens soulignés, lexique lisible aux lecteurs d'écran",
+      "date": "2026-10-30",
+      "lots": [
+        "L10"
+      ],
+      "captures": [
+        "captures/L10-langue-liens-390.png"
+      ],
+      "alts": [
+        "Le bas de la page Langue sur un écran de 390 px : le lexique, puis les trois liens de « Pour aller plus loin » soulignés."
+      ],
+      "html": "<p>Sur la page Langue, les liens sont maintenant soulignés : on les repère sans devoir distinguer deux teintes. Un lien qui s'ouvre dans un nouvel onglet le précise aux lecteurs d'écran, qui annoncent « (nouvel onglet) » après son nom.</p>\n<p>Le lexique de base est annoncé comme un tableau intitulé « Lexique de base », avec ses deux colonnes nommées. Les mots Na'vi sont signalés comme une autre langue : un lecteur d'écran ne les prononce plus comme du français. La ligne de source, en bas de page, est écrite à pleine teinte pour rester lisible sur le fond animé.</p>"
+    },
+    {
+      "slug": "2026-10-30-pages-du-bestiaire-lisibilite-et-accessibilite-revues",
+      "title": "Pages du bestiaire : lisibilité et accessibilité revues",
+      "date": "2026-10-30",
+      "lots": [
+        "L9"
+      ],
+      "captures": [
+        "captures/L9-bestiaire-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche du bestiaire sur un écran de 390 px : le lien « ← Tout le bestiaire » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche du bestiaire, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Tout le bestiaire » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
+    {
+      "slug": "2026-10-30-pages-des-clans-lisibilite-et-accessibilite-revues",
+      "title": "Pages des clans : lisibilité et accessibilité revues",
+      "date": "2026-10-30",
+      "lots": [
+        "L8"
+      ],
+      "captures": [
+        "captures/L8-clans-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche de clan sur un écran de 390 px : le lien « ← Tous les clans » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de clan, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Tous les clans » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
+    {
+      "slug": "2026-10-29-engins-un-retour-clair-depuis-chaque-fiche",
+      "title": "Engins : un retour clair depuis chaque fiche",
+      "date": "2026-10-29",
+      "lots": [
+        "L7"
+      ],
+      "captures": [
+        "captures/L7-engins-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche d'engin sur un écran de 390 px : le lien « ← Tous les engins » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Engins, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Tous les engins » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
+    {
+      "slug": "2026-10-29-films-un-retour-clair-depuis-chaque-fiche",
+      "title": "Films : un retour clair depuis chaque fiche",
+      "date": "2026-10-29",
+      "lots": [
+        "L6"
+      ],
+      "captures": [
+        "captures/L6-films-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche de film sur un écran de 390 px : le lien « ← Tous les films » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Films, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Tous les films » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
+    {
+      "slug": "2026-10-29-fiches-des-paragraphes-aeres",
+      "title": "Fiches : des paragraphes aérés",
+      "date": "2026-10-29",
+      "lots": [
+        "L42"
+      ],
+      "captures": [
+        "captures/L42-fiche-390.png"
+      ],
+      "alts": [
+        "Le texte de la fiche Hometree sur un écran de 390 px : les paragraphes sont séparés par un espace."
+      ],
+      "html": "<p>Dans les fiches du codex, les paragraphes se suivaient sans aucun espace : au téléphone, le texte formait un bloc compact, pénible à lire.</p>\n<p>Chaque paragraphe est maintenant séparé du suivant, dans toutes les sections (Pandora, Clans, Bestiaire, Flore, Personnages, Films, Engins), à toutes les largeurs. Les listes et les intertitres des fiches sont aérés de la même façon.</p>"
+    },
+    {
+      "slug": "2026-10-29-flore-un-retour-clair-depuis-chaque-fiche",
+      "title": "Flore : un retour clair depuis chaque fiche",
+      "date": "2026-10-29",
+      "lots": [
+        "L5"
+      ],
+      "captures": [
+        "captures/L5-flore-fiche-retour-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche de la Flore sur un écran de 390 px : le lien « ← Toutes les entrées de la Flore » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Flore, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Toutes les entrées de la Flore » et sa zone fait au moins 44 px de haut, à toutes les largeurs. Ce bloc de retour est aussi annoncé comme tel par les lecteurs d'écran, à part de la navigation du codex.</p>"
+    },
+    {
+      "slug": "2026-10-27-pandora-un-retour-clair-depuis-chaque-fiche-et-des-titres-mi",
+      "title": "Pandora : un retour clair depuis chaque fiche et des titres mieux ordonnés",
+      "date": "2026-10-27",
+      "lots": [
+        "L4"
+      ],
+      "captures": [
+        "captures/L4-pandora-retour-fiche-390.png"
+      ],
+      "alts": [
+        "Le bas d'une fiche Pandora sur un écran de 390 px : le lien « ← Toutes les entrées de Pandora » sous le texte."
+      ],
+      "html": "<p>En bas d'une fiche de la section Pandora, le lien de retour disait seulement « ← retour » et ne laissait qu'une toute petite zone à toucher, difficile à viser au téléphone.</p>\n<p>Il se lit maintenant « ← Toutes les entrées de Pandora » et sa zone fait au moins 44 px de haut, à toutes les largeurs : on sait où l'on revient et on l'atteint du pouce.</p>\n<p>Sur la liste, les titres des cartes suivent maintenant directement le titre de la page, sans niveau sauté : les lecteurs d'écran et les outils de navigation par titres s'y retrouvent. L'aspect des cartes ne change pas, et la même correction vaut pour les listes Personnages, Bestiaire, Clans, Flore, Films et Engins.</p>"
+    },
     {
       "slug": "2026-10-10-codex-les-particules-se-mettent-en-pause",
       "title": "Codex : les particules se mettent en pause",

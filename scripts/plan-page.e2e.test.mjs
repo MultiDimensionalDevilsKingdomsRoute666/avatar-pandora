@@ -1,5 +1,5 @@
 // L20 — page « Plan de travail » (/plan-de-travail/) : en cours, prévu, récemment livré,
-// générée AU BUILD depuis docs/plan/raf.yaml. Titres et états seulement : AUCUN texte de
+// générée AU BUILD depuis .cadence/raf.yaml. Titres et états seulement : AUCUN texte de
 // note (ni verdict UX, ni raison d'abandon, ni titre de sous-tâche) ne doit sortir dans
 // le site construit — vérifié sur TOUS les fichiers de frontend/dist (formes échappées
 // HTML et JSON comprises). Repris d'evatosorus après sa relecture et sa revue UX.
@@ -13,11 +13,11 @@ import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSy
 import { tmpdir } from 'node:os';
 import { extname, join } from 'node:path';
 import { DIST, setupBrowser } from './lib/e2e-dist.mjs';
-import { newsTitlesByLot, publicTitleOf } from '../frontend/src/lib/plan-public.ts';
+import { RECENT_DONE, newsTitlesByLot, publicTitleOf } from '../frontend/src/lib/plan-public.ts';
 
 const require = createRequire(new URL('../frontend/package.json', import.meta.url));
 const { parse } = require('yaml');
-const RAF = parse(readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8'));
+const RAF = parse(readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8'));
 const PAGE = join(DIST, 'plan-de-travail', 'index.html');
 const html = () => readFileSync(PAGE, 'utf8');
 
@@ -70,6 +70,21 @@ const publicTitle = (l) => {
 const published = lots.filter((l) => l.visible === true && ['doing', 'todo', 'done'].includes(l.status) && publicTitle(l));
 const shown = (status) => published.filter((l) => l.status === status);
 
+// Lots livrés que la page montre : « récemment livré » = les RECENT_DONE plus récents, dans l'ordre
+// de la page — date de livraison (à défaut début, à défaut création) décroissante, puis rang dans le
+// plan décroissant — un seul lot par titre public (le premier de cet ordre ; les autres sont fondus).
+const sortKey = (l) => [l.finished, l.started, l.created].find((v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v)) ?? '';
+function recentDone(all = published) {
+  const byRecency = all
+    .map((l, i) => ({ l, i }))
+    .filter(({ l }) => l.status === 'done')
+    .sort((a, b) => sortKey(b.l).localeCompare(sortKey(a.l)) || b.i - a.i)
+    .map(({ l }) => l);
+  const firsts = byRecency.filter((l, i) => byRecency.findIndex((x) => publicTitle(x) === publicTitle(l)) === i);
+  return { shown: firsts.slice(0, RECENT_DONE), all: byRecency };
+}
+const RECENT = recentDone();
+
 test('dist/plan-de-travail/index.html est construit, titré « Plan de travail »', () => {
   assert.ok(existsSync(PAGE), 'page absente : lancer `npx astro build`');
   assert.match(html(), /<title>Plan de travail — Eywa<\/title>/);
@@ -87,10 +102,28 @@ test('trois sections titrées ; tous les lots en cours et prévus, dans l’ordr
     for (const l of shown(status)) assert.ok(page.includes(publicTitle(l).replace(/'/g, '’')), `${l.id} : titre public absent`);
   }
   const done = [...page.matchAll(/<li[^>]*class="plan-lot" data-status="done"[^>]*data-id="([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(done.length > 0 && done.length <= 8, `${done.length} lots livrés affichés`);
+  assert.ok(done.length > 0 && done.length <= RECENT_DONE, `${done.length} lots livrés affichés`);
   assert.ok(done.every((id) => shown('done').some((l) => l.id === id)));
   const ids = [...page.matchAll(/data-id="([^"]+)"/g)].map((m) => m[1]);
   assert.deepEqual(ids.filter((id) => !published.some((l) => l.id === id)), [], 'lot masqué (non visible, sans titre public ou abandonné) publié');
+});
+
+test('« Récemment livré » : exactement les RECENT_DONE lots livrés les plus récents, dans l’ordre de la page', () => {
+  const ids = [...decode(html()).matchAll(/<li[^>]*class="plan-lot" data-status="done"[^>]*data-id="([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(RECENT.all.length > RECENT_DONE, 'moins de lots livrés que le plafond : le test ne prouverait pas la borne');
+  assert.equal(ids.length, RECENT_DONE, `la page montre ${ids.length} lots livrés, attendu ${RECENT_DONE}`);
+  assert.deepEqual(ids, RECENT.shown.map((l) => l.id));
+});
+
+test('le calcul des lots livrés attendus borne au plafond, trie par date puis rang, et fond les titres égaux', () => {
+  const mk = (id, finished, title = `Titre ${id}`) => ({ id, status: 'done', visible: true, finished, public: title });
+  const lots9 = Array.from({ length: 9 }, (_, i) => mk(`A${i}`, `2026-10-${String(10 + i).padStart(2, '0')}`));
+  const r = recentDone(lots9);
+  assert.deepEqual(r.shown.map((l) => l.id), ['A8', 'A7', 'A6', 'A5', 'A4', 'A3', 'A2', 'A1']);
+  const same = recentDone([mk('B0', '2026-10-01'), mk('B1', '2026-10-01')]);
+  assert.deepEqual(same.shown.map((l) => l.id), ['B1', 'B0'], 'à date égale, le plus loin dans le plan d’abord');
+  const merged = recentDone([mk('C0', '2026-10-01', 'Même'), mk('C1', '2026-10-02', 'Même')]);
+  assert.deepEqual(merged.shown.map((l) => l.id), ['C1']);
 });
 
 test('AUCUN texte privé du plan dans le site construit : titres bruts, notes, verdicts UX, raisons, sous-tâches, lots abandonnés', () => {
@@ -150,10 +183,10 @@ test('le détecteur de fuites trouve un texte privé planté, en clair, échapp�
 test('dates de livraison en français, « 1er » le premier du mois (ordinal en exposant, jamais « 1ER »)', () => {
   const page = decode(html().replace(/<(?!\/?li\b)[^>]+>/g, ''));
   assert.doesNotMatch(html(), />1ER</, 'ordinal en capitales');
-  if (shown('done').some((l) => String(l.finished).endsWith('-01'))) assert.match(html(), />1<\/span><sup class="fr-ordinal[^"]*"[^>]*>er<\/sup> /);
+  if (RECENT.shown.some((l) => String(l.finished).endsWith('-01'))) assert.match(html(), />1<\/span><sup class="fr-ordinal[^"]*"[^>]*>er<\/sup> /);
   assert.ok(!/>1 octobre/.test(page), '« 1 octobre » au lieu de « 1er »');
-  for (const l of shown('done').filter((x) => x.finished)) assert.match(html(), new RegExp(`<time[^>]*datetime="${l.finished}"`), `${l.id} : date de livraison absente`);
-  if (shown('done').some((l) => String(l.finished).endsWith('-01'))) assert.match(page, /1er octobre/);
+  for (const l of RECENT.shown.filter((x) => x.finished)) assert.match(html(), new RegExp(`<time[^>]*datetime="${l.finished}"`), `${l.id} : date de livraison absente`);
+  if (RECENT.shown.some((l) => String(l.finished).endsWith('-01'))) assert.match(page, /1er octobre/);
 });
 
 test('section vide : texte honnête (« Prévu » vide → « Les prochains travaux seront annoncés ici. ») ; jamais « 0 » dans le bandeau', () => {
@@ -170,7 +203,8 @@ test('aucun identifiant de lot (« L14 »…) dans le texte visible ; il reste e
   const text = decode(main.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' '));
   assert.doesNotMatch(text, /\bL\d+\b/, 'identifiant de lot visible');
   // Chaque lot publié a sa ligne (id lot-<id>), ou est fondu dans celle d'un lot au même titre (data-also).
-  for (const l of published) {
+  const onPage = published.filter((l) => l.status !== 'done' || RECENT.shown.some((r) => publicTitle(r) === publicTitle(l)));
+  for (const l of onPage) {
     const own = new RegExp(`<li[^>]*data-id="${l.id}" id="lot-${l.id}"`).test(page);
     const merged = new RegExp(`<li[^>]*data-also="[^"]*\\b${l.id}\\b`).test(page);
     assert.ok(own || merged, `${l.id} : ni ligne ni fusion`);

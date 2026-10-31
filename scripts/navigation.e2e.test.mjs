@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { DIST, setupBrowser, worstPixelContrast } from './lib/e2e-dist.mjs';
+import { badgeLabel } from '../frontend/src/lib/news-seen.ts';
 
 const DATA = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8'));
 const KEY = 'eywa.news.seen-v1';
@@ -91,7 +92,7 @@ test('accueil : pastille sur le lien Nouveautés (nom accessible compris) ; lien
   await page.reload({ waitUntil: 'load' });
   const link = page.locator('.landing-follow a[href="/nouveautes/"]');
   await link.locator('.news-badge').waitFor({ state: 'visible' });
-  assert.equal((await link.locator('.news-badge__n').textContent()).trim(), String(n));
+  assert.equal((await link.locator('.news-badge__n').textContent()).trim(), badgeLabel(n));
   assert.equal(await page.getByRole('link', { name: new RegExp(`^Nouveautés \\(${unseenText(n)}\\)$`) }).count(), 1);
   // La pastille ne grandit pas le lien.
   const [a, b] = await rowOf(page, '.landing-follow a');

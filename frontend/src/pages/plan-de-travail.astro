@@ -4,7 +4,7 @@
   inspiré de la page « À venir » d'AetherWX, repris d'evatosorus (après sa relecture et sa
   revue UX).
 
-  Source : docs/plan/raf.yaml (tenu par raf, cadence), lu AU BUILD — absent ou illisible,
+  Source : .cadence/raf.yaml (tenu par raf, cadence), lu AU BUILD — absent ou illisible,
   le build échoue (jamais une page vide). On ne publie que les lots visibles qui ont un
   TITRE PUBLIC (champ public: du plan, sinon titre de leur Nouveauté ; jamais le titre
   brut), avec leur état et le décompte de leurs étapes (liste blanche de
@@ -20,7 +20,7 @@ import news from '../../public/nouveautes-data/nouveautes.json';
 
 // Build lancé depuis frontend/ (npm run build ; Cloudflare Pages : racine du dépôt,
 // « cd frontend && npm install && npm run build ») : le plan est un cran au-dessus.
-const plan = loadPublicPlan(join(process.cwd(), '..', 'docs', 'plan', 'raf.yaml'), news.entries);
+const plan = loadPublicPlan(join(process.cwd(), '..', '.cadence', 'raf.yaml'), news.entries);
 
 const summary = planSummary(plan.counts);
 

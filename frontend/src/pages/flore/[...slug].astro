@@ -20,12 +20,12 @@ const { Content } = await render(entry);
     <EntryCover cover={entry.data.cover} title={entry.data.title} section="Flore" />
     <h1 class="font-display text-4xl text-eywa-bio-primary mb-3">{entry.data.title}</h1>
     <p class="text-eywa-text-muted text-lg italic mb-10">{entry.data.summary}</p>
-    <div class="text-eywa-text leading-relaxed font-body text-lg">
+    <div class="entry-body text-eywa-text leading-relaxed font-body text-lg">
       <Content />
     </div>
-    <nav class="mt-16 pt-8 border-t border-eywa-text-muted/20">
-      <a href="/flore/" class="text-eywa-text-muted hover:text-eywa-bio-primary transition">
-        ← retour
+    <nav aria-label="Retour à la liste" class="mt-16 pt-8 border-t border-eywa-text-muted/20">
+      <a href="/flore/" class="inline-flex items-center min-h-11 text-eywa-text-muted hover:text-eywa-bio-primary transition">
+        ← Toutes les entrées de la Flore
       </a>
     </nav>
   </article>

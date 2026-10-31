@@ -1,4 +1,4 @@
-// L20 — page « Plan de travail » : ce qui est publié du plan (docs/plan/raf.yaml).
+// L20 — page « Plan de travail » : ce qui est publié du plan (.cadence/raf.yaml).
 // Repris d'evatosorus (L28), modèle finance-tracker : un lot n'apparaît que s'il est
 // `visible: true` ET a un titre PUBLIC — son champ `public:`, sinon le titre de son entrée
 // Nouveautés, sinon il est masqué ; JAMAIS le titre brut du plan. Liste blanche : id, titre
@@ -90,7 +90,7 @@ test('newsTitlesByLot : titre de l’entrée la plus récente (première du JSON
 });
 
 test('le vrai raf.yaml : aucun titre brut (sauf s’il est aussi le titre public), aucune note ni sous-tâche publiée', () => {
-  const text = readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8');
+  const text = readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8');
   const entries = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8')).entries;
   const p = parsePublicPlan(text, entries);
   const shown = [...p.doing, ...p.todo, ...p.done];
@@ -149,19 +149,27 @@ test('raf.yaml absent ou illisible au build : erreur explicite (le build échoue
   assert.throws(() => parsePublicPlan('version: 1\nproject: x\n', []), /lots/, 'plan sans liste de lots');
 });
 
-test('le vrai plan : L20 et L21 publiés en cours sous leur titre public', () => {
-  const text = readFileSync(new URL('../docs/plan/raf.yaml', import.meta.url), 'utf8');
+test('le vrai plan : tout lot en cours, visible et avec public: est publié en cours sous son titre public (vrai quel que soit l’état du plan)', () => {
+  const text = readFileSync(new URL('../.cadence/raf.yaml', import.meta.url), 'utf8');
   const entries = JSON.parse(readFileSync(new URL('../frontend/public/nouveautes-data/nouveautes.json', import.meta.url), 'utf8')).entries;
   const raf = parse(text);
   const p = parsePublicPlan(text, entries);
-  const all = [...p.doing, ...p.todo, ...p.done];
-  for (const id of ['L20', 'L21']) {
-    const lot = raf.lots.find((l) => l.id === id);
-    assert.ok(lot.public, `${id} : champ public: absent`);
-    const shown = all.find((l) => l.id === id || l.also?.includes(id));
-    assert.ok(shown, `${id} non publié`);
+  for (const lot of raf.lots.filter((l) => l.status === 'doing' && l.visible === true && l.public)) {
+    const shown = p.doing.find((l) => l.id === lot.id || l.also?.includes(lot.id));
+    assert.ok(shown, `${lot.id} en cours non publié en cours`);
     assert.equal(shown.title, lot.public.trim());
   }
+});
+
+test('le plan publié : les lots en cours visibles avec public: sont publiés en cours (plan de fixture, fait foi sans le vrai plan)', () => {
+  const text = [
+    'version: 1', 'project: demo', 'lots:',
+    '  - { id: A1, title: brut, public: "Chantier un", visible: true, status: doing }',
+    '  - { id: A2, title: brut, public: "Chantier deux", visible: true, status: doing }',
+    '  - { id: A3, title: brut, public: "Caché", status: doing }',
+  ].join('\n');
+  const p = parsePublicPlan(text, []);
+  assert.deepEqual(p.doing.map((l) => [l.id, l.title]), [['A1', 'Chantier un'], ['A2', 'Chantier deux']]);
 });
 
 test('public: qui n’est pas un texte d’une ligne (objet, liste, nombre, saut de ligne) : le build échoue', () => {

@@ -81,11 +81,15 @@ Qualité avant tout. Spec validée : `docs/superpowers/specs/2026-05-02-avatar-p
 
 ## Plan, sessions et revue UX (cadence)
 
-Le reste à faire vit dans `docs/plan/raf.yaml`, tenu par `raf`
+Le reste à faire vit dans `.cadence/raf.yaml`, tenu par `raf`
 ([cadence](https://github.com/Sylad/cadence)) : chaque commit cite son lot dans le
 message (`fix(L4): …`, `L2/t1`), `raf now` dit la suite, `raf check` repère les
 écarts. Début et fin de session : skills `/cadence:session-start` et
 `/cadence:session-close`.
+
+**Porte de tests des vagues** (`orchestrate` de `cadence.yaml`, L38) : `build` = `cd frontend && npm run build`,
+`test` = `cd frontend && npm run build && npm run test:scripts` (les tests navigateur lisent `frontend/dist`).
+Il n'y a pas d'autre suite que le `node --test` des scripts. `precheck: true`.
 
 **Revue UX obligatoire** (règle de Sylvain du 2026-09-28, tous les projets perso) : toute nouvelle
 page ou modification d'écran est un lot `--visible`, revu par l'agent `cadence:ux-reviewer` (captures
@@ -123,8 +127,8 @@ texte agrandi (×1,25, espacement WCAG 1.4.12) fait passer un libellé à la lig
 déborder la rangée.
 
 **Plan de travail** (page `/plan-de-travail/`, L20, modèle evatosorus/finance-tracker) : en cours, prévu,
-récemment livré, rendue **au build** depuis `docs/plan/raf.yaml` (`src/lib/plan-public.ts`, lu depuis
-`frontend/` : `../docs/plan/raf.yaml`, vrai aussi sur Cloudflare Pages dont la commande est
+récemment livré, rendue **au build** depuis `.cadence/raf.yaml` (`src/lib/plan-public.ts`, lu depuis
+`frontend/` : `../.cadence/raf.yaml`, vrai aussi sur Cloudflare Pages dont la commande est
 `cd frontend && …`). `raf.yaml` absent ou sans `lots` = build en échec. Ne sont publiés que les lots
 `visible: true`, non abandonnés, qui ont un **titre public** : champ `public:` du lot, sinon titre de la
 Nouveauté la plus récente qui le cite ; les lots « Revue … » exigent un `public:` ; sinon masqués. Liste

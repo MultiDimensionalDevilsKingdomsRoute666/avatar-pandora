@@ -12,6 +12,33 @@ async function frame(page) {
   return (await page.screenshot({ animations: 'allow' })).toString('base64');
 }
 
+// Sous charge, un dernier rendu (particules, lissage du pointeur) peut tomber bien après le clic :
+// plutôt qu'un délai fixe, on attend deux images consécutives identiques (10 s au plus) avant de
+// mesurer l'immobilité. L'échec d'une pause réelle, lui, reste vu : l'image continue de changer.
+async function waitStill(page, ms = 10_000) {
+  const end = Date.now() + ms;
+  let prev = await frame(page);
+  while (Date.now() < end) {
+    await page.waitForTimeout(300);
+    const cur = await frame(page);
+    if (cur === prev) return true;
+    prev = cur;
+  }
+  return false;
+}
+
+// Témoin : l'ambiance bouge (jusqu'à 5 images comparées, une machine chargée peut en rendre deux égales).
+async function moves(page) {
+  let prev = await frame(page);
+  for (let i = 0; i < 5; i++) {
+    await page.waitForTimeout(600);
+    const cur = await frame(page);
+    if (cur !== prev) return true;
+    prev = cur;
+  }
+  return false;
+}
+
 async function runningAnimations(page) {
   return page.evaluate(() =>
     document.getAnimations()
@@ -37,9 +64,7 @@ for (const path of PAGES) {
       assert.match(label, /pause/i);
 
       // Témoin : sans pause, l'ambiance bouge (sinon la mesure ne prouve rien).
-      const a = await frame(page);
-      await page.waitForTimeout(1200);
-      assert.notEqual(await frame(page), a, 'témoin : l’ambiance doit bouger avant la pause');
+      assert.equal(await moves(page), true, 'témoin : l’ambiance doit bouger avant la pause');
 
       // Le bouton n'est recouvert par rien : un vrai clic l'atteint.
       await btn.click();
@@ -47,7 +72,7 @@ for (const path of PAGES) {
       assert.equal(await page.evaluate(() => document.documentElement.classList.contains('eywa-atmo-paused')), true);
       await page.mouse.move(width / 2, height / 2); // le pointeur ne doit pas relancer les particules
       await page.mouse.move(width / 2 + 3, height / 2 + 3);
-      await page.waitForTimeout(500); // laisse finir le dernier rendu et le lissage du pointeur
+      assert.equal(await waitStill(page), true, `${path} @${width}px : l’image ne s’est pas figée après le clic`);
 
       const frames = [];
       for (let i = 0; i < 4; i++) {
@@ -62,6 +87,7 @@ for (const path of PAGES) {
       await page.reload({ waitUntil: 'load' });
       await page.waitForTimeout(1200);
       assert.equal(await page.locator('#eywa-atmo-toggle').getAttribute('aria-pressed'), 'true');
+      assert.equal(await waitStill(page), true, 'rechargé en pause : l’image ne se fige pas');
       const r1 = await frame(page);
       await page.waitForTimeout(1500);
       assert.equal(await frame(page), r1, 'rechargé en pause : l’image bouge');
@@ -69,9 +95,7 @@ for (const path of PAGES) {
       // Reprise.
       await page.locator('#eywa-atmo-toggle').click();
       assert.equal(await page.locator('#eywa-atmo-toggle').getAttribute('aria-pressed'), 'false');
-      const b = await frame(page);
-      await page.waitForTimeout(1200);
-      assert.notEqual(await frame(page), b, 'reprise : l’ambiance doit repartir');
+      assert.equal(await moves(page), true, 'reprise : l’ambiance doit repartir');
       await context.close();
     });
   }
